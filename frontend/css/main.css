@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #1f1f1f;
+  background-color: #ffffff;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #1f6f43 !important;
+}
+
+.hero-section {
+  min-height: 90vh;
+  background: linear-gradient(to right, #f4fbf6, #ffffff);
+  padding: 60px 0;
+}
+
+.hero-image-placeholder {
+  min-height: 420px;
+  background-color: #e9f7ee;
+  border: 2px dashed #9ac9aa;
+  color: #4d7a5c;
+  font-weight: 600;
+}
+
+.section-text {
+  max-width: 700px;
+}
+
+.feature-card,
+.step-card,
+.info-box {
+  border: 1px solid #edf1ed;
+}
+
+.feature-card h5,
+.step-card h5 {
+  margin-bottom: 12px;
+}
+
+.nutrient-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e9ecef;
+  font-weight: 500;
+}

@@ -48,3 +48,21 @@ body {
   border-bottom: 1px solid #e9ecef;
   font-weight: 500;
 }
+
+.step-number {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #198754;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+
+.cta-section {
+  background: linear-gradient(to right, #198754, #2d9b66);
+}

@@ -89,5 +89,131 @@
         </div>
       </div>
     </section>
+    <!-- Calculator Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Form Card -->
+          <div class="col-lg-8">
+            <div class="form-card bg-white rounded-4 shadow-sm p-4 p-lg-5">
+              <div class="mb-4">
+                <h2 class="fw-bold mb-2">Your health profile</h2>
+                <p class="text-muted mb-0">
+                  Fill in your details below. Later, this form will connect to
+                  your backend and return calculated calorie guidance and
+                  nutrition-focused suggestions.
+                </p>
+              </div>
+              <form id="calculatorForm" novalidate>
+                <div class="row g-4">
+                  <div class="col-md-6">
+                    <label for="age" class="form-label fw-semibold">Age</label>
+                    <input
+                      type="number"
+                      class="form-control custom-input"
+                      id="age"
+                      placeholder="Enter your age"
+                      min="1"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="gender" class="form-label fw-semibold"
+                      >Gender</label
+                    >
+                    <select class="form-select custom-input" id="gender">
+                      <option selected disabled>Select gender</option>
+                      <option>Male</option>
+                      <option>Female</option>
+                      <option>Prefer not to say</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="height" class="form-label fw-semibold"
+                      >Height (cm)</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control custom-input"
+                      id="height"
+                      placeholder="Enter your height in cm"
+                      min="1"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="weight" class="form-label fw-semibold"
+                      >Weight (kg)</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control custom-input"
+                      id="weight"
+                      placeholder="Enter your weight in kg"
+                      min="1"
+                      step="0.1"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="activity" class="form-label fw-semibold"
+                      >Activity Level</label
+                    >
+                    <select class="form-select custom-input" id="activity">
+                      <option selected disabled>Select activity level</option>
+                      <option>Sedentary</option>
+                      <option>Lightly Active</option>
+                      <option>Moderately Active</option>
+                      <option>Very Active</option>
+                      <option>Extra Active</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="goal" class="form-label fw-semibold"
+                      >Goal</label
+                    >
+                    <select class="form-select custom-input" id="goal">
+                      <option selected disabled>Select your goal</option>
+                      <option>Maintain Weight</option>
+                      <option>Lose Weight</option>
+                      <option>Gain Weight</option>
+                      <option>Improve General Health</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="allergies" class="form-label fw-semibold"
+                      >Allergies / Food Restrictions</label
+                    >
+                    <textarea
+                      class="form-control custom-input"
+                      id="allergies"
+                      rows="4"
+                      placeholder="Example: Soy allergy, nut allergy, gluten intolerance"
+                    ></textarea>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="d-flex flex-wrap gap-3 pt-2">
+                      <button type="submit" class="btn btn-success btn-lg px-4">
+                        Calculate
+                      </button>
+                      <button
+                        type="reset"
+                        class="btn btn-outline-success btn-lg px-4"
+                      >
+                        Reset
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

@@ -66,3 +66,85 @@ body {
 .cta-section {
   background: linear-gradient(to right, #198754, #2d9b66);
 }
+
+/* Calculator page adjustments */
+.page-hero-section {
+  background: linear-gradient(to right, #f4fbf6, #ffffff);
+  padding: 80px 0 50px;
+}
+
+.page-hero-card {
+  border: 1px solid #edf1ed;
+}
+
+.calculator-hero-list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 12px;
+  color: #4f5b52;
+  font-weight: 500;
+}
+
+.calculator-hero-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #198754;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.form-card,
+.result-card {
+  border: 1px solid #edf1ed;
+}
+
+.custom-input {
+  min-height: 52px;
+  border-radius: 14px;
+  border: 1px solid #dfe7e1;
+  padding: 0.85rem 1rem;
+  box-shadow: none;
+}
+
+textarea.custom-input {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.custom-input:focus {
+  border-color: #198754;
+  box-shadow: 0 0 0 0.15rem rgba(25, 135, 84, 0.15);
+}
+
+.form-label {
+  color: #25352b;
+}
+
+.result-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #198754;
+  background-color: #e9f7ee;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.nutrient-pill {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background-color: #f4fbf6;
+  color: #1f6f43;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid #dbeee1;
+}
+
+@media (max-width: 991.98px) {
+  .page-hero-section {
+    padding: 60px 0 40px;
+  }
+}

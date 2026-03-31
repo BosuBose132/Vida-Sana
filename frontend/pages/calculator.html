@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vida Sana | Calorie Calculator</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="./index.html">Vida Sana</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./calculator.html">Calculator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./recommendations.html"
+                >Recommendations</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./foods.html">Foods</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./replacements.html">Replacements</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-success px-4" href="./calculator.html"
+                >Get Started</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="page-hero-section">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-7">
+            <span
+              class="badge rounded-pill text-bg-success-subtle text-success mb-3 px-3 py-2"
+            >
+              Personalized Wellness Guidance
+            </span>
+            <h1 class="display-6 fw-bold mb-3">
+              Calculate your daily calorie needs
+            </h1>
+            <p class="lead text-muted mb-0">
+              Enter your details to estimate your daily calorie requirement and
+              prepare for a more balanced vegan transition.
+            </p>
+          </div>
+          <div class="col-lg-5">
+            <div class="page-hero-card rounded-4 shadow-sm p-4 bg-white">
+              <h5 class="fw-semibold mb-3">What this helps you do</h5>
+              <ul class="list-unstyled mb-0 calculator-hero-list">
+                <li>Estimate calorie needs</li>
+                <li>Understand nutrition priorities</li>
+                <li>Prepare for personalized food suggestions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Calculator Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Form Card -->
+          <div class="col-lg-8">
+            <div class="form-card bg-white rounded-4 shadow-sm p-4 p-lg-5">
+              <div class="mb-4">
+                <h2 class="fw-bold mb-2">Your health profile</h2>
+                <p class="text-muted mb-0">
+                  Fill in your details below. Later, this form will connect to
+                  your backend and return calculated calorie guidance and
+                  nutrition-focused suggestions.
+                </p>
+              </div>
+              <form id="calculatorForm" novalidate>
+                <div class="row g-4">
+                  <div class="col-md-6">
+                    <label for="age" class="form-label fw-semibold">Age</label>
+                    <input
+                      type="number"
+                      class="form-control custom-input"
+                      id="age"
+                      placeholder="Enter your age"
+                      min="1"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="gender" class="form-label fw-semibold"
+                      >Gender</label
+                    >
+                    <select class="form-select custom-input" id="gender">
+                      <option selected disabled>Select gender</option>
+                      <option>Male</option>
+                      <option>Female</option>
+                      <option>Prefer not to say</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="height" class="form-label fw-semibold"
+                      >Height (cm)</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control custom-input"
+                      id="height"
+                      placeholder="Enter your height in cm"
+                      min="1"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="weight" class="form-label fw-semibold"
+                      >Weight (kg)</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control custom-input"
+                      id="weight"
+                      placeholder="Enter your weight in kg"
+                      min="1"
+                      step="0.1"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="activity" class="form-label fw-semibold"
+                      >Activity Level</label
+                    >
+                    <select class="form-select custom-input" id="activity">
+                      <option selected disabled>Select activity level</option>
+                      <option>Sedentary</option>
+                      <option>Lightly Active</option>
+                      <option>Moderately Active</option>
+                      <option>Very Active</option>
+                      <option>Extra Active</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="goal" class="form-label fw-semibold"
+                      >Goal</label
+                    >
+                    <select class="form-select custom-input" id="goal">
+                      <option selected disabled>Select your goal</option>
+                      <option>Maintain Weight</option>
+                      <option>Lose Weight</option>
+                      <option>Gain Weight</option>
+                      <option>Improve General Health</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="allergies" class="form-label fw-semibold"
+                      >Allergies / Food Restrictions</label
+                    >
+                    <textarea
+                      class="form-control custom-input"
+                      id="allergies"
+                      rows="4"
+                      placeholder="Example: Soy allergy, nut allergy, gluten intolerance"
+                    ></textarea>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="d-flex flex-wrap gap-3 pt-2">
+                      <button type="submit" class="btn btn-success btn-lg px-4">
+                        Calculate
+                      </button>
+                      <button
+                        type="reset"
+                        class="btn btn-outline-success btn-lg px-4"
+                      >
+                        Reset
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- Result / Info Panel -->
+          <div class="col-lg-4">
+            <div class="result-card bg-white rounded-4 shadow-sm p-4 mb-4">
+              <span class="result-label">Estimated Result</span>
+              <h3 class="fw-bold mt-3 mb-2">2,100 kcal/day</h3>
+              <p class="text-muted mb-0">
+                This is a sample placeholder. After backend integration, the app
+                will show the user’s actual estimated calorie requirement here.
+              </p>
+            </div>
+
+            <div class="result-card bg-white rounded-4 shadow-sm p-4 mb-4">
+              <h5 class="fw-semibold mb-3">Nutrients to watch</h5>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="nutrient-pill">Vitamin B12</span>
+                <span class="nutrient-pill">Iron</span>
+                <span class="nutrient-pill">Calcium</span>
+                <span class="nutrient-pill">Omega-3</span>
+                <span class="nutrient-pill">Protein</span>
+                <span class="nutrient-pill">Vitamin D</span>
+              </div>
+            </div>
+
+            <div class="result-card bg-white rounded-4 shadow-sm p-4">
+              <h5 class="fw-semibold mb-3">Next step</h5>
+              <p class="text-muted">
+                Once calculation is complete, users can continue to personalized
+                vegan food recommendations based on their needs and
+                restrictions.
+              </p>
+              <a href="./recommendations.html" class="btn btn-success w-100">
+                View Recommendations
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="py-4 bg-white border-top">
+      <div class="container text-center">
+        <p class="mb-0 text-muted">© 2026 Vida Sana. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

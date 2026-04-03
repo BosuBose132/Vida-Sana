@@ -1,14 +1,9 @@
-import js from "@eslint/js";
-import globals from "globals";
+const js = require("@eslint/js");
+const globals = require("globals");
 
-export default [
+module.exports = [
   {
-    ignores: [
-      "**/node_modules/**",
-      "**/.git/**",
-      "**/.DS_Store",
-      "backend/node_modules/**",
-    ],
+    ignores: ["**/node_modules/**", "**/.git/**", "**/.DS_Store"],
   },
 
   js.configs.recommended,

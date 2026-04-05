@@ -1,12 +1,20 @@
 const express = require("express");
+const cors = require("cors");
+
+const calorieRoutes = require("./src/routes/calorieRoutes");
 const app = express();
 
+app.use(cors());
 app.use(express.json());
+app.use("/api/calories", calorieRoutes);
 
-app.get("/", (req, res) => {
-  res.send("Vida Sana Backend Running");
+app.get("/api/health", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Vida Sana backend is running",
+  });
 });
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

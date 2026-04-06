@@ -32,3 +32,18 @@ function adjustCaloriesByGoal(maintenanceCalories, goal) {
 
   return maintenanceCalories;
 }
+function calculateDailyCalories(userData) {
+  const bmr = calculateBMR(userData);
+  const activityMultiplier = getActivityMultiplier(userData.activity);
+  const maintenanceCalories = bmr * activityMultiplier;
+  const targetCalories = adjustCaloriesByGoal(
+    maintenanceCalories,
+    userData.goal,
+  );
+
+  return {
+    bmr: Math.round(bmr),
+    maintenanceCalories: Math.round(maintenanceCalories),
+    targetCalories: Math.round(targetCalories),
+  };
+}

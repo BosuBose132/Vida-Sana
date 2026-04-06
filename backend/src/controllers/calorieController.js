@@ -31,6 +31,9 @@ function calculateCalories(req, res) {
     if (!validGenders.includes(gender)) {
       return res.status(400).json(errorResponse("Invalid gender value"));
     }
+    if (!validActivities.includes(activity)) {
+      return res.status(400).json(errorResponse("Invalid activity level"));
+    }
     if (!validGoals.includes(goal)) {
       return res.status(400).json(errorResponse("Invalid goal value"));
     }

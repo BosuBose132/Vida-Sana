@@ -3,6 +3,7 @@ const cors = require("cors");
 
 const calorieRoutes = require("./src/routes/calorieRoutes");
 const app = express();
+const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());

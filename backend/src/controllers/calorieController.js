@@ -50,6 +50,7 @@ function calculateCalories(req, res) {
       .status(200)
       .json(successResponse("Calorie calculation successful", result));
   } catch (error) {
+    console.error("Calorie calculation error:", error);
     return res.status(500).json(errorResponse("Internal server error"));
   }
 }

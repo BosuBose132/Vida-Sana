@@ -47,3 +47,6 @@ function calculateDailyCalories(userData) {
     targetCalories: Math.round(targetCalories),
   };
 }
+module.exports = {
+  calculateDailyCalories,
+};

@@ -21,3 +21,14 @@ function calculateBMR({ gender, weight, height, age }) {
 
   return 10 * weight + 6.25 * height - 5 * age;
 }
+function adjustCaloriesByGoal(maintenanceCalories, goal) {
+  if (goal === "Lose Weight") {
+    return maintenanceCalories - 500;
+  }
+
+  if (goal === "Gain Weight") {
+    return maintenanceCalories + 300;
+  }
+
+  return maintenanceCalories;
+}

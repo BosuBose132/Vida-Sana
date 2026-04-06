@@ -9,3 +9,15 @@ function getActivityMultiplier(activity) {
 
   return activityMap[activity];
 }
+
+function calculateBMR({ gender, weight, height, age }) {
+  if (gender === "Male") {
+    return 10 * weight + 6.25 * height - 5 * age + 5;
+  }
+
+  if (gender === "Female") {
+    return 10 * weight + 6.25 * height - 5 * age - 161;
+  }
+
+  return 10 * weight + 6.25 * height - 5 * age;
+}

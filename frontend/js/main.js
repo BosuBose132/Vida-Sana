@@ -1,6 +1,40 @@
 const calculatorForm = document.getElementById("calculatorForm");
 
 if (calculatorForm) {
+  const goalResult = document.getElementById("goalResult");
+  const calculateBtn = document.getElementById("calculateBtn");
+
+  const calorieResult = document.getElementById("calorieResult");
+  const calorieMessage = document.getElementById("calorieMessage");
+  const bmrResult = document.getElementById("bmrResult");
+  const maintenanceResult = document.getElementById("maintenanceResult");
+
+  function resetCalculatorResults() {
+    calorieResult.textContent = "-- kcal/day";
+    calorieMessage.textContent =
+      "Fill in your details and click Calculate to receive your estimated calorie target and supporting health metrics.";
+    bmrResult.textContent = "-- kcal/day";
+    maintenanceResult.textContent = "-- kcal/day";
+    goalResult.textContent = "--";
+  }
+  function resetCalculatorResults() {
+    if (calorieResult) {
+      calorieResult.textContent = "-- kcal/day";
+    }
+    if (calorieMessage) {
+      calorieMessage.textContent =
+        "Fill in your details and click Calculate to receive your estimated calorie target and supporting health metrics.";
+    }
+    if (bmrResult) {
+      bmrResult.textContent = "-- kcal/day";
+    }
+    if (maintenanceResult) {
+      maintenanceResult.textContent = "-- kcal/day";
+    }
+    if (goalResult) {
+      goalResult.textContent = "--";
+    }
+  }
   calculatorForm.addEventListener("submit", async function (event) {
     event.preventDefault();
 
@@ -12,20 +46,6 @@ if (calculatorForm) {
     const goal = document.getElementById("goal").value;
     const allergies = document.getElementById("allergies").value.trim();
 
-    const calorieResult = document.getElementById("calorieResult");
-    const calorieMessage = document.getElementById("calorieMessage");
-    const bmrResult = document.getElementById("bmrResult");
-    const maintenanceResult = document.getElementById("maintenanceResult");
-    const goalResult = document.getElementById("goalResult");
-    const calculateBtn = document.getElementById("calculateBtn");
-    function resetCalculatorResults() {
-      calorieResult.textContent = "-- kcal/day";
-      calorieMessage.textContent =
-        "Fill in your details and click Calculate to receive your estimated calorie target and supporting health metrics.";
-      bmrResult.textContent = "-- kcal/day";
-      maintenanceResult.textContent = "-- kcal/day";
-      goalResult.textContent = "--";
-    }
     if (!age || !gender || !height || !weight || !activity || !goal) {
       resetCalculatorResults();
       calorieMessage.textContent =
@@ -43,7 +63,6 @@ if (calculatorForm) {
       calculateBtn.disabled = true;
       calculateBtn.textContent = "Calculating...";
 
-      calorieResult.textContent = "-- kcal/day";
       calorieMessage.textContent =
         "Please wait while we calculate your daily calorie needs.";
       bmrResult.textContent = "-- kcal/day";
@@ -87,7 +106,6 @@ if (calculatorForm) {
       bmrResult.textContent = `${result.data.bmr} kcal/day`;
       maintenanceResult.textContent = `${result.data.maintenanceCalories} kcal/day`;
       goalResult.textContent = goal;
-      calorieMessage.textContent = `BMR: ${result.data.bmr} kcal/day | Maintenance: ${result.data.maintenanceCalories} kcal/day`;
     } catch (error) {
       resetCalculatorResults();
       calorieResult.textContent = "-- kcal/day";

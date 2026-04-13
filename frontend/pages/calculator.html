@@ -232,13 +232,44 @@
           </div>
           <!-- Result / Info Panel -->
           <div class="col-lg-4">
-            <div class="result-card bg-white rounded-4 shadow-sm p-4 mb-4">
-              <span class="result-label">Estimated Result</span>
-              <h3 class="fw-bold mt-3 mb-2" id="calorieResult">-- kcal/day</h3>
-              <p class="text-muted mb-0" id="calorieMessage">
-                Fill in your details and click Calculate to see your estimated
-                daily calorie requirement.
+            <div
+              class="result-card bg-white rounded-4 shadow-sm p-4 mb-4 calculator-summary-card"
+            >
+              <div
+                class="d-flex justify-content-between align-items-start mb-3"
+              >
+                <div>
+                  <span class="result-label">Your Daily Estimate</span>
+                  <h3 class="fw-bold mt-3 mb-1" id="calorieResult">
+                    -- kcal/day
+                  </h3>
+                </div>
+                <span class="summary-badge">Live Result</span>
+              </div>
+
+              <p class="text-muted mb-4" id="calorieMessage">
+                Fill in your details and click Calculate to receive your
+                estimated calorie target and supporting health metrics.
               </p>
+
+              <div class="result-metrics">
+                <div class="result-metric-item">
+                  <p class="metric-label mb-1">Basal Metabolic Rate</p>
+                  <h6 class="metric-value mb-0" id="bmrResult">-- kcal/day</h6>
+                </div>
+
+                <div class="result-metric-item">
+                  <p class="metric-label mb-1">Maintenance Calories</p>
+                  <h6 class="metric-value mb-0" id="maintenanceResult">
+                    -- kcal/day
+                  </h6>
+                </div>
+
+                <div class="result-metric-item">
+                  <p class="metric-label mb-1">Goal</p>
+                  <h6 class="metric-value mb-0" id="goalResult">--</h6>
+                </div>
+              </div>
             </div>
 
             <div class="result-card bg-white rounded-4 shadow-sm p-4 mb-4">

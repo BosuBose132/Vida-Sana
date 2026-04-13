@@ -14,39 +14,59 @@
 </html>
 <body>
   <!-- Navbar -->
-  <nav
-    class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
-  >
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Vida Sana</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top custom-navbar">
+  <div class="container">
 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold" href="index.html">Vida Sana</a>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Calculator</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Recommendations</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Foods</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Replacements</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-success px-4" href="#">Get Started</a>
-          </li>
-        </ul>
-      </div>
+    <!-- Toggle Button (Mobile) -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
+
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" href="#">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" href="#">Calculator</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" href="#">Recommendations</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" href="#">Foods</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link active" href="replacements.html">
+            Replacements
+          </a>
+        </li>
+
+        <!-- Button -->
+        <li class="nav-item ms-lg-3">
+          <a class="btn btn-success px-4 custom-btn" href="#">
+            Get Started
+          </a>
+        </li>
+
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
   <!-- Hero Section -->
   <section class="hero-section d-flex align-items-center">
     <div class="container">

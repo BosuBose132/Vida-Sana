@@ -142,7 +142,116 @@ textarea.custom-input {
   font-weight: 600;
   border: 1px solid #dbeee1;
 }
+/* calculatorPolishCss */
+.calculator-summary-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fcf9 100%);
+}
 
+.summary-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: #eef8f1;
+  color: #1f6f43;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid #d8ebde;
+}
+
+.result-metrics {
+  display: grid;
+  gap: 14px;
+}
+
+.result-metric-item {
+  padding: 14px 16px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  border: 1px solid #e6efe8;
+}
+
+.metric-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #6a776d;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.metric-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #23362a;
+}
+
+.form-card-header {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eef2ef;
+}
+
+.form-card .btn-lg,
+.calculator-next-step-card .btn {
+  border-radius: 14px;
+  font-weight: 600;
+}
+
+.calculator-next-step-card .btn-outline-success:hover {
+  color: #ffffff;
+}
+
+.result-card h5 {
+  color: #223329;
+}
+
+.result-card p {
+  line-height: 1.6;
+}
+
+.nutrient-pill {
+  transition: all 0.2s ease;
+}
+
+.nutrient-pill:hover {
+  transform: translateY(-1px);
+  background-color: #ebf8ef;
+  border-color: #cfe7d7;
+}
+
+.form-card,
+.result-card,
+.page-hero-card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-card:hover,
+.result-card:hover,
+.page-hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1rem 2rem rgba(31, 111, 67, 0.08) !important;
+}
+
+#calorieResult {
+  color: #174f31;
+  letter-spacing: -0.02em;
+}
+
+#calorieMessage {
+  min-height: 48px;
+}
+
+@media (max-width: 991.98px) {
+  .result-metrics {
+    gap: 12px;
+  }
+
+  .result-metric-item {
+    padding: 13px 14px;
+  }
+}
 @media (max-width: 991.98px) {
   .page-hero-section {
     padding: 60px 0 40px;

@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 
+const nutrientRoutes = require("./src/routes/nutrientRoutes");
 const calorieRoutes = require("./src/routes/calorieRoutes");
 const app = express();
 const PORT = 3000;
@@ -8,6 +9,7 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 app.use("/api/calories", calorieRoutes);
+app.use("/api/nutrients", nutrientRoutes);
 
 app.get("/api/health", (req, res) => {
   res.status(200).json({

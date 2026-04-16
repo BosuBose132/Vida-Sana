@@ -1,4 +1,5 @@
 const calculatorForm = document.getElementById("calculatorForm");
+const nutrientsList = document.getElementById("nutrientsList");
 
 if (calculatorForm) {
   calculatorForm.addEventListener("submit", async function (event) {
@@ -57,3 +58,36 @@ if (calculatorForm) {
     }
   });
 }
+// Load nutrients to watch on page load
+async function loadNutrientsToWatch() {
+  if (!nutrientsList) {
+    return;
+  }
+
+  try {
+    const response = await fetch("http://localhost:3000/api/nutrients");
+    const result = await response.json();
+
+    if (!response.ok) {
+      nutrientsList.innerHTML =
+        '<span class="text-muted small">Unable to load nutrients right now.</span>';
+      return;
+    }
+
+    nutrientsList.innerHTML = "";
+
+    result.data.forEach((nutrient) => {
+      const nutrientPill = document.createElement("span");
+      nutrientPill.className = "nutrient-pill";
+      nutrientPill.textContent = nutrient.name;
+
+      nutrientsList.appendChild(nutrientPill);
+    });
+  } catch (error) {
+    nutrientsList.innerHTML =
+      '<span class="text-muted small">Unable to connect to nutrient API.</span>';
+    console.error("Nutrients API error:", error);
+  }
+}
+
+loadNutrientsToWatch();

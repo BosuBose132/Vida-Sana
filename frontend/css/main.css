@@ -410,6 +410,22 @@
   background: linear-gradient(135deg, rgba(111, 159, 47, 0.25), rgba(255, 255, 255, 0.18));
 }
 
+/* ===== FORCE Home feature-card circle ABOVE title (override everything) ===== */
+.feature-card {
+  position: relative !important;
+  padding-top: 140px !important;
+  overflow: hidden !important;
+}
+
+.feature-card .vs-thumb {
+  left: 50% !important;
+  top: 14px !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  width: 110px !important;
+  height: 110px !important;
+}
+
 .vs-thumb-img {
   width: 100%;
   height: 100%;

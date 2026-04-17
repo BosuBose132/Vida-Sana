@@ -730,3 +730,34 @@ textarea.custom-input {
   color: var(--vs-text);
   font-weight: 900;
 }
+
+/* Home: Nutrients section glass note card */
+.info-box {
+  background: var(--vs-glass);
+  border: 1px solid var(--vs-border);
+  backdrop-filter: blur(10px);
+}
+
+/* Home: Nutrients list styling to match theme */
+.nutrient-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(160, 190, 120, 0.25);
+  font-weight: 800;
+  color: #2f3d1f;
+}
+
+.nutrient-list li:last-child {
+  border-bottom: 0;
+}
+
+/* Home: How It Works step cards match replacements glass style */
+.step-card {
+  background: var(--vs-glass);
+  border: 1px solid var(--vs-border);
+  backdrop-filter: blur(10px);
+}
+
+/* Step number already exists, but ensure it matches theme green */
+.step-number {
+  background-color: var(--vs-green);
+}

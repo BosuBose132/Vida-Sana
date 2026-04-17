@@ -1,6 +1,74 @@
 const calculatorForm = document.getElementById("calculatorForm");
 const nutrientsList = document.getElementById("nutrientsList");
 
+const personalizedNutrientsList = document.getElementById(
+  "personalizedNutrientsList",
+);
+const personalizedNutrientsNote = document.getElementById(
+  "personalizedNutrientsNote",
+);
+
+async function loadPersonalizedNutrients(goal, allergies) {
+  if (!personalizedNutrientsList || !personalizedNutrientsNote) {
+    return;
+  }
+
+  personalizedNutrientsList.innerHTML =
+    '<div class="text-muted small">Loading personalized nutrient guidance...</div>';
+
+  try {
+    const response = await fetch(
+      "http://localhost:3000/api/nutrients/recommend",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          goal,
+          allergies,
+        }),
+      },
+    );
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      personalizedNutrientsList.innerHTML =
+        '<div class="text-muted small">Unable to load personalized nutrients right now.</div>';
+      return;
+    }
+
+    personalizedNutrientsNote.textContent = result.data.note;
+    personalizedNutrientsList.innerHTML = "";
+
+    result.data.priorityNutrients.forEach((nutrient) => {
+      const nutrientCard = document.createElement("div");
+      nutrientCard.className = "personalized-nutrient-card";
+
+      const sourcesHtml = nutrient.veganSources
+        .map(
+          (source) => `<span class="personalized-source-pill">${source}</span>`,
+        )
+        .join("");
+
+      nutrientCard.innerHTML = `
+        <h6 class="fw-bold mb-2">${nutrient.name}</h6>
+        <p class="text-muted small mb-2">${nutrient.whyItMatters}</p>
+        <div class="personalized-source-list">
+          ${sourcesHtml}
+        </div>
+        <p class="personalized-tip mt-3 mb-0">${nutrient.beginnerTip}</p>
+      `;
+
+      personalizedNutrientsList.appendChild(nutrientCard);
+    });
+  } catch (error) {
+    personalizedNutrientsList.innerHTML =
+      '<div class="text-muted small">Unable to connect to personalized nutrient API.</div>';
+    console.error("Personalized nutrients API error:", error);
+  }
+}
 if (calculatorForm) {
   calculatorForm.addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -88,76 +156,6 @@ async function loadNutrientsToWatch() {
     nutrientsList.innerHTML =
       '<span class="text-muted small">Unable to connect to nutrient API.</span>';
     console.error("Nutrients API error:", error);
-  }
-
-  const personalizedNutrientsList = document.getElementById(
-    "personalizedNutrientsList",
-  );
-  const personalizedNutrientsNote = document.getElementById(
-    "personalizedNutrientsNote",
-  );
-
-  async function loadPersonalizedNutrients(goal, allergies) {
-    if (!personalizedNutrientsList || !personalizedNutrientsNote) {
-      return;
-    }
-
-    personalizedNutrientsList.innerHTML =
-      '<div class="text-muted small">Loading personalized nutrient guidance...</div>';
-
-    try {
-      const response = await fetch(
-        "http://localhost:3000/api/nutrients/recommend",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            goal,
-            allergies,
-          }),
-        },
-      );
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        personalizedNutrientsList.innerHTML =
-          '<div class="text-muted small">Unable to load personalized nutrients right now.</div>';
-        return;
-      }
-
-      personalizedNutrientsNote.textContent = result.data.note;
-      personalizedNutrientsList.innerHTML = "";
-
-      result.data.priorityNutrients.forEach((nutrient) => {
-        const nutrientCard = document.createElement("div");
-        nutrientCard.className = "personalized-nutrient-card";
-
-        const sourcesHtml = nutrient.veganSources
-          .map(
-            (source) =>
-              `<span class="personalized-source-pill">${source}</span>`,
-          )
-          .join("");
-
-        nutrientCard.innerHTML = `
-        <h6 class="fw-bold mb-2">${nutrient.name}</h6>
-        <p class="text-muted small mb-2">${nutrient.whyItMatters}</p>
-        <div class="personalized-source-list">
-          ${sourcesHtml}
-        </div>
-        <p class="personalized-tip mt-3 mb-0">${nutrient.beginnerTip}</p>
-      `;
-
-        personalizedNutrientsList.appendChild(nutrientCard);
-      });
-    } catch (error) {
-      personalizedNutrientsList.innerHTML =
-        '<div class="text-muted small">Unable to connect to personalized nutrient API.</div>';
-      console.error("Personalized nutrients API error:", error);
-    }
   }
 }
 

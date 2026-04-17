@@ -851,3 +851,13 @@ textarea.custom-input {
 .cta-section {
   background: linear-gradient(to right, var(--vs-green), #2d9b66);
 }
+
+.vs-thumb-emoji {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 56px;
+  line-height: 1;
+  background: transparent;
+}

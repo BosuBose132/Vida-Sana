@@ -761,3 +761,8 @@ textarea.custom-input {
 .step-number {
   background-color: var(--vs-green);
 }
+
+/* Home: CTA matches theme greens */
+.cta-section {
+  background: linear-gradient(to right, var(--vs-green), #2d9b66);
+}

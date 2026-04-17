@@ -718,3 +718,15 @@ textarea.custom-input {
     padding: 60px 0 40px;
   }
 }
+
+/* Home: feature cards match replacements glass style */
+.feature-card {
+  background: var(--vs-glass);
+  border: 1px solid var(--vs-border);
+  backdrop-filter: blur(10px);
+}
+
+.feature-card h5 {
+  color: var(--vs-text);
+  font-weight: 900;
+}

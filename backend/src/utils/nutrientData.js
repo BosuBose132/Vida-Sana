@@ -111,7 +111,27 @@ const nutrientsToWatch = [
       "Brazil nuts are rich in selenium, but only a small amount is usually needed.",
   },
 ];
+const goalPriorityMap = {
+  "Gain Weight": ["Protein", "Iron", "Calcium", "Omega-3"],
+  "Lose Weight": ["Protein", "Iron", "Vitamin B12", "Calcium"],
+  "Maintain Weight": ["Vitamin B12", "Iron", "Calcium", "Vitamin D"],
+  "Improve General Health": [
+    "Vitamin B12",
+    "Vitamin D",
+    "Omega-3",
+    "Iodine",
+    "Selenium",
+  ],
+};
+
+const restrictionSourceMap = {
+  soy: ["Tofu", "Tempeh", "Soy milk", "Edamame"],
+  nut: ["Almonds", "Cashews", "Walnuts", "Brazil nuts", "Nut butters"],
+  gluten: ["Seitan"],
+};
 
 module.exports = {
   nutrientsToWatch,
+  goalPriorityMap,
+  restrictionSourceMap,
 };

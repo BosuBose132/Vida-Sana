@@ -105,8 +105,16 @@
 /* ===== HERO (img-1 style) ===== */
 .vs-hero {
   background:
-    radial-gradient(circle at 15% 25%, rgba(180, 220, 120, 0.30), transparent 45%),
-    radial-gradient(circle at 80% 30%, rgba(120, 190, 120, 0.20), transparent 50%),
+    radial-gradient(
+      circle at 15% 25%,
+      rgba(180, 220, 120, 0.3),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(120, 190, 120, 0.2),
+      transparent 50%
+    ),
     linear-gradient(to right, var(--vs-bg1), var(--vs-bg2));
   padding: 70px 0 55px;
 }
@@ -193,12 +201,60 @@
   color: #2f3d1f;
   font-weight: 800;
 }
+/* Nutrients to watch personalized section */
+.personalized-nutrients-list {
+  display: grid;
+  gap: 14px;
+}
+
+.personalized-nutrient-card {
+  padding: 16px;
+  border-radius: 16px;
+  background-color: #f8fcf9;
+  border: 1px solid #e1eee5;
+}
+
+.personalized-nutrient-card h6 {
+  color: #174f31;
+}
+
+.personalized-source-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.personalized-source-pill {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background-color: #ffffff;
+  color: #355242;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid #dcebe1;
+}
+
+.personalized-tip {
+  font-size: 0.9rem;
+  color: #5d6f64;
+  line-height: 1.5;
+}
 
 /* ===== REPLACEMENTS SECTION ===== */
 .vs-replacements {
   background:
-    radial-gradient(circle at 10% 10%, rgba(180, 220, 120, 0.18), transparent 45%),
-    radial-gradient(circle at 90% 15%, rgba(120, 190, 120, 0.12), transparent 50%),
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(180, 220, 120, 0.18),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(120, 190, 120, 0.12),
+      transparent 50%
+    ),
     linear-gradient(to right, var(--vs-bg1), var(--vs-bg2));
   padding: 55px 0 60px;
   border-top: 1px solid rgba(223, 233, 207, 0.8);
@@ -278,7 +334,10 @@
   font-weight: 800;
   cursor: pointer;
   opacity: 0.92;
-  transition: background 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .vs-chip:hover {
@@ -306,8 +365,8 @@
   overflow-y: hidden;
   padding: 16px;
 
-  background: rgba(255, 255, 255, 0.20);
-  border: 1px solid rgba(160, 190, 120, 0.30);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(160, 190, 120, 0.3);
   border-radius: 22px;
   backdrop-filter: blur(10px);
 
@@ -323,19 +382,25 @@
 
 .vs-card {
   position: relative;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(233, 247, 238, 0.55));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.55),
+    rgba(233, 247, 238, 0.55)
+  );
   background: var(--vs-glass);
   border: 1px solid rgba(160, 190, 120, 0.28);
   border-radius: 18px;
   padding: 16px;
   min-height: 330px;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .vs-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
 }
 
 .vs-card-head {
@@ -406,8 +471,12 @@
   border-radius: 999px;
   overflow: hidden;
   border: 4px solid rgba(255, 255, 255, 0.75);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
-  background: linear-gradient(135deg, rgba(111, 159, 47, 0.25), rgba(255, 255, 255, 0.18));
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+    135deg,
+    rgba(111, 159, 47, 0.25),
+    rgba(255, 255, 255, 0.18)
+  );
 }
 
 .vs-thumb-img {

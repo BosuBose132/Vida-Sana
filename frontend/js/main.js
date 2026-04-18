@@ -309,5 +309,88 @@ function buildRecommendationCard(food) {
     </div>
   `;
 }
+async function loadRecommendationsPage() {
+  if (
+    !recommendationsList ||
+    !recommendationsState ||
+    !recommendationSummaryText
+  ) {
+    return;
+  }
 
+  const storedProfile = sessionStorage.getItem("vidaSanaRecommendationProfile");
+
+  if (!storedProfile) {
+    recommendationsState.innerHTML =
+      '<p class="text-muted mb-0">No calculator profile was found. Please complete the calculator first.</p>';
+    recommendationSummaryText.textContent =
+      "Complete the calculator first to see personalized food recommendations.";
+    return;
+  }
+
+  const profile = JSON.parse(storedProfile);
+
+  if (profileTargetCalories) {
+    profileTargetCalories.textContent = `${profile.targetCalories} kcal/day`;
+  }
+
+  if (profileGoal) {
+    profileGoal.textContent = profile.goal || "--";
+  }
+
+  if (profileAllergies) {
+    profileAllergies.textContent = profile.allergies || "None";
+  }
+
+  if (profileActivity) {
+    profileActivity.textContent = profile.activity || "--";
+  }
+
+  try {
+    recommendationsState.innerHTML =
+      '<p class="text-muted mb-0">Loading personalized recommendations from the database...</p>';
+
+    const response = await fetch("http://localhost:3000/api/recommendations", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        targetCalories: profile.targetCalories,
+        goal: profile.goal,
+        allergies: profile.allergies,
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      recommendationsState.innerHTML = `<p class="text-muted mb-0">${result.message || "Unable to load recommendations."}</p>`;
+      return;
+    }
+
+    const foods = result.data.recommendedFoods || [];
+
+    recommendationSummaryText.textContent = `Showing foods matched to your goal of ${result.data.goal} with nutrition values per 100g.`;
+
+    if (foods.length === 0) {
+      recommendationsState.innerHTML =
+        '<p class="text-muted mb-0">No matching foods were found for the selected filters.</p>';
+      return;
+    }
+
+    recommendationsList.innerHTML = foods
+      .map((food) => buildRecommendationCard(food))
+      .join("");
+
+    recommendationsState.classList.add("d-none");
+    recommendationsList.classList.remove("d-none");
+  } catch (error) {
+    recommendationsState.innerHTML =
+      '<p class="text-muted mb-0">Unable to connect to the recommendations API right now.</p>';
+    console.error("Recommendations page error:", error);
+  }
+}
+
+loadRecommendationsPage();
 loadNutrientsToWatch();

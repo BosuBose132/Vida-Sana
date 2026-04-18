@@ -119,6 +119,24 @@ if (calculatorForm) {
       calorieResult.textContent = `${result.data.targetCalories} kcal/day`;
       calorieMessage.textContent = `BMR: ${result.data.bmr} kcal/day | Maintenance: ${result.data.maintenanceCalories} kcal/day`;
       loadPersonalizedNutrients(goal, allergies);
+      //Save data to localStorage for recommendations page
+      const recommendationProfile = {
+        targetCalories: result.data.targetCalories,
+        bmr: result.data.bmr,
+        maintenanceCalories: result.data.maintenanceCalories,
+        age,
+        gender,
+        height,
+        weight,
+        activity,
+        goal,
+        allergies,
+      };
+
+      sessionStorage.setItem(
+        "vidaSanaRecommendationProfile",
+        JSON.stringify(recommendationProfile),
+      );
     } catch (error) {
       calorieResult.textContent = "-- kcal/day";
       calorieMessage.textContent =

@@ -7,6 +7,17 @@ const personalizedNutrientsList = document.getElementById(
 const personalizedNutrientsNote = document.getElementById(
   "personalizedNutrientsNote",
 );
+//recommendations page elements
+const recommendationsList = document.getElementById("recommendationsList");
+const recommendationsState = document.getElementById("recommendationsState");
+const recommendationSummaryText = document.getElementById(
+  "recommendationSummaryText",
+);
+
+const profileTargetCalories = document.getElementById("profileTargetCalories");
+const profileGoal = document.getElementById("profileGoal");
+const profileAllergies = document.getElementById("profileAllergies");
+const profileActivity = document.getElementById("profileActivity");
 
 async function loadPersonalizedNutrients(goal, allergies) {
   if (!personalizedNutrientsList || !personalizedNutrientsNote) {

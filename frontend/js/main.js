@@ -187,5 +187,45 @@ async function loadNutrientsToWatch() {
     console.error("Nutrients API error:", error);
   }
 }
+function buildNutritionChart(food) {
+  const chartItems = [
+    {
+      label: "Protein",
+      value: Number(food.protein),
+      max: 30,
+    },
+    {
+      label: "Carbs",
+      value: Number(food.carbs),
+      max: 70,
+    },
+    {
+      label: "Fats",
+      value: Number(food.fats),
+      max: 50,
+    },
+    {
+      label: "Fiber",
+      value: Number(food.fiber),
+      max: 20,
+    },
+  ];
+
+  return chartItems
+    .map((item) => {
+      const height = Math.max(10, Math.min((item.value / item.max) * 100, 100));
+
+      return `
+        <div class="chart-bar-group">
+          <div class="chart-bar-track">
+            <div class="chart-bar" style="height: ${height}%"></div>
+          </div>
+          <div class="chart-label">${item.label}</div>
+          <div class="chart-value">${item.value}g</div>
+        </div>
+      `;
+    })
+    .join("");
+}
 
 loadNutrientsToWatch();

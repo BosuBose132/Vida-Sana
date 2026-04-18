@@ -1,38 +1,45 @@
 CREATE TABLE users (
-user_id INT PRIMARY KEY AUTO_INCREMENT,
-name VARCHAR(50),
-email VARCHAR(20),
-password VARCHAR(20),
-created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  user_id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE food_categories (
+  category_id INT PRIMARY KEY AUTO_INCREMENT,
+  category_name VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE vegan_foods (
+  food_id INT PRIMARY KEY AUTO_INCREMENT,
+  food_name VARCHAR(100) NOT NULL UNIQUE,
+  category_id INT NOT NULL,
+  calories DECIMAL(6,2) NOT NULL,
+  protein DECIMAL(6,2) NOT NULL,
+  carbs DECIMAL(6,2) NOT NULL,
+  fats DECIMAL(6,2) NOT NULL,
+  fiber DECIMAL(6,2) DEFAULT 0,
+  iron DECIMAL(6,2) DEFAULT 0,
+  calcium DECIMAL(6,2) DEFAULT 0,
+  omega_3 DECIMAL(6,2) DEFAULT 0,
+  serving_basis VARCHAR(20) NOT NULL DEFAULT '100g',
+  is_nut_free BOOLEAN NOT NULL DEFAULT TRUE,
+  is_soy_free BOOLEAN NOT NULL DEFAULT TRUE,
+  is_gluten_free BOOLEAN NOT NULL DEFAULT TRUE,
+  goal_tag ENUM('muscle_gain', 'weight_loss', 'maintenance', 'general_health') NOT NULL,
+  description TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (category_id) REFERENCES food_categories(category_id)
+);
 
 CREATE TABLE food_replacements (
-    replacement_id INT PRIMARY KEY AUTO_INCREMENT,
-    non_vegan_item VARCHAR(50),
-    vegan_alternatives VARCHAR(50),
-    nutrient_focus VARCHAR(50),
-    replacement_reason VARCHAR(50),
-    usage_type VARCHAR(50),
-    notes TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  replacement_id INT PRIMARY KEY AUTO_INCREMENT,
+  non_vegan_item VARCHAR(100) NOT NULL,
+  vegan_alternatives VARCHAR(255) NOT NULL,
+  nutrient_focus VARCHAR(100),
+  replacement_reason VARCHAR(255),
+  usage_type VARCHAR(100),
+  notes TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-CREATE TABLE food_categories(category_id INT AUTO_INCREMENT PRIMARY KEY,category_name VARCHAR(50));
- CREATE TABLE vegan_foods(food_id INT AUTO_INCREMENT PRIMARY KEY,food_name VARCHAR(50),category_id INT,calories FLOAT,protein FLOAT,carbs FLOAT, fats FLOAT,FOREIGN KEY (category_id) REFERENCES food_categories(category_id),fiber FLOAT,iron FLOAT,calcium FLOAT,omega_3 FLOAT,is_nut_free BOOLEAN,is_soy_free BOOLEAN,is_gluten_free BOOLEAN,goal_tag VARCHAR(50),description TEXT,CHECK (goal_tag IN ('muscle_gain', 'weight_loss', 'maintenance')));
- ALTER TABLE vegan_foods
-    -> ADD fiber FLOAT,
-    -> ADD iron FLOAT,
-    -> ADD calcium FLOAT,
-    -> ADD omega_3 FLOAT,
-    -> ADD is_nut_free BOOLEAN,
-    -> ADD is_soy_free BOOLEAN,
-    -> ADD is_gluten_free BOOLEAN,
-    -> ADD goal_tag VARCHAR(50),
-    -> ADD description TEXT;
-    ALTER TABLE vegan_foods
-    -> ADD FOREIGN KEY (category_id) REFERENCES food_categories(category_id);
-    ALTER TABLE vegan_foods
-    -> MODIFY goal_tag ENUM('muscle_gain','weight_loss','maintenance');
-    
-

@@ -1,12 +1,3 @@
-INSERT INTO users (name, email, password)
-VALUES
-('Heremoine Granger', 'hgranger08@gmail.com', 'Heremoine#08'),
-('Lara Johnson', 'larajohnson123@gmail.com', 'larajohn@23'),
-('Harry Potter', 'harrypotter8@gmail.com', 'Potter#Hogwarts'),
-('Ron Whisley', 'ronwhisley80@gmail.com', 'spider@whisley'),
-('Severus Snape', 'severuslily02@gmail.com', 'lilypotter@2');
-
-
 INSERT INTO food_replacements (non_vegan_item, vegan_alternatives, nutrient_focus, replacement_reason, usage_type, notes)
 VALUES
 ('Chicken', 'tofu/tempeh', 'protein', 'Avoid Animal meat and eat plant protein', 'curry/stir/grill', 'Tofu absorbs flavours well and tempeh has a firm, meat like texture'),

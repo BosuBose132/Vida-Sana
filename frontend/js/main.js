@@ -227,5 +227,87 @@ function buildNutritionChart(food) {
     })
     .join("");
 }
+function buildRecommendationCard(food) {
+  const badges = [];
+
+  if (food.is_nut_free) {
+    badges.push('<span class="recommendation-flag">Nut Free</span>');
+  }
+
+  if (food.is_soy_free) {
+    badges.push('<span class="recommendation-flag">Soy Free</span>');
+  }
+
+  if (food.is_gluten_free) {
+    badges.push('<span class="recommendation-flag">Gluten Free</span>');
+  }
+
+  return `
+    <div class="recommendation-food-card">
+      <div class="recommendation-food-card-header">
+        <div>
+          <h4 class="fw-bold mb-2">${food.food_name}</h4>
+          <span class="recommendation-category-badge">${food.category_name}</span>
+        </div>
+        <div class="text-end">
+          <div class="small text-muted">Per ${food.serving_basis}</div>
+          <div class="fw-bold text-success">${food.calories} kcal</div>
+        </div>
+      </div>
+
+      <p class="recommendation-description">${food.description}</p>
+
+      <div class="recommendation-reason">
+        ${food.recommendationReason}
+      </div>
+
+      <div class="recommendation-badges">
+        ${badges.join("")}
+      </div>
+
+      <div class="nutrition-grid">
+        <div class="nutrition-stat">
+          <div class="nutrition-stat-label">Protein</div>
+          <div class="nutrition-stat-value">${food.protein}g</div>
+        </div>
+        <div class="nutrition-stat">
+          <div class="nutrition-stat-label">Carbs</div>
+          <div class="nutrition-stat-value">${food.carbs}g</div>
+        </div>
+        <div class="nutrition-stat">
+          <div class="nutrition-stat-label">Fats</div>
+          <div class="nutrition-stat-value">${food.fats}g</div>
+        </div>
+        <div class="nutrition-stat">
+          <div class="nutrition-stat-label">Fiber</div>
+          <div class="nutrition-stat-value">${food.fiber}g</div>
+        </div>
+        <div class="nutrition-stat">
+          <div class="nutrition-stat-label">Iron</div>
+          <div class="nutrition-stat-value">${food.iron}</div>
+        </div>
+        <div class="nutrition-stat">
+          <div class="nutrition-stat-label">Calcium</div>
+          <div class="nutrition-stat-value">${food.calcium}</div>
+        </div>
+        <div class="nutrition-stat">
+          <div class="nutrition-stat-label">Omega-3</div>
+          <div class="nutrition-stat-value">${food.omega_3}</div>
+        </div>
+        <div class="nutrition-stat">
+          <div class="nutrition-stat-label">Serving</div>
+          <div class="nutrition-stat-value">${food.serving_basis}</div>
+        </div>
+      </div>
+
+      <div class="chart-hover-panel">
+        <div class="chart-title">Nutrition Snapshot</div>
+        <div class="mini-chart">
+          ${buildNutritionChart(food)}
+        </div>
+      </div>
+    </div>
+  `;
+}
 
 loadNutrientsToWatch();

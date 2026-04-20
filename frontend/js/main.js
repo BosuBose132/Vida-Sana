@@ -231,82 +231,123 @@ function buildRecommendationCard(food) {
   const badges = [];
 
   if (food.is_nut_free) {
-    badges.push('<span class="recommendation-flag">Nut Free</span>');
+    badges.push(
+      '<span class="recommendation-flag"><i class="bi bi-shield-check me-1"></i>Nut Free</span>',
+    );
   }
 
   if (food.is_soy_free) {
-    badges.push('<span class="recommendation-flag">Soy Free</span>');
+    badges.push(
+      '<span class="recommendation-flag"><i class="bi bi-shield-check me-1"></i>Soy Free</span>',
+    );
   }
 
   if (food.is_gluten_free) {
-    badges.push('<span class="recommendation-flag">Gluten Free</span>');
+    badges.push(
+      '<span class="recommendation-flag"><i class="bi bi-shield-check me-1"></i>Gluten Free</span>',
+    );
   }
 
   return `
-    <div class="recommendation-food-card">
-      <div class="recommendation-food-card-header">
-        <div>
-          <h4 class="fw-bold mb-2">${food.food_name}</h4>
-          <span class="recommendation-category-badge">${food.category_name}</span>
+    <article class="recommendation-food-card">
+      <div class="recommendation-card-top">
+        <div class="recommendation-title-wrap">
+          <div class="recommendation-icon-circle">
+            <i class="bi bi-flower1"></i>
+          </div>
+          <div>
+            <h4 class="recommendation-title mb-1">${food.food_name}</h4>
+            <span class="recommendation-category-badge">${food.category_name}</span>
+          </div>
         </div>
-        <div class="text-end">
-          <div class="small text-muted">Per ${food.serving_basis}</div>
-          <div class="fw-bold text-success">${food.calories} kcal</div>
+
+        <div class="recommendation-calorie-box">
+          <span class="recommendation-serving-label">Per ${food.serving_basis}</span>
+          <strong class="recommendation-calorie-value">${food.calories} kcal</strong>
         </div>
       </div>
 
       <p class="recommendation-description">${food.description}</p>
 
       <div class="recommendation-reason">
-        ${food.recommendationReason}
+        <i class="bi bi-lightbulb me-2"></i>${food.recommendationReason}
       </div>
 
       <div class="recommendation-badges">
         ${badges.join("")}
       </div>
 
-      <div class="nutrition-grid">
-        <div class="nutrition-stat">
-          <div class="nutrition-stat-label">Protein</div>
-          <div class="nutrition-stat-value">${food.protein}g</div>
+      <div class="recommendation-preview-row">
+        <div class="preview-pill protein">
+          <i class="bi bi-lightning-charge-fill"></i>
+          <span>Protein</span>
+          <strong>${food.protein}g</strong>
         </div>
-        <div class="nutrition-stat">
-          <div class="nutrition-stat-label">Carbs</div>
-          <div class="nutrition-stat-value">${food.carbs}g</div>
+        <div class="preview-pill carbs">
+          <i class="bi bi-circle-square"></i>
+          <span>Carbs</span>
+          <strong>${food.carbs}g</strong>
         </div>
-        <div class="nutrition-stat">
-          <div class="nutrition-stat-label">Fats</div>
-          <div class="nutrition-stat-value">${food.fats}g</div>
-        </div>
-        <div class="nutrition-stat">
-          <div class="nutrition-stat-label">Fiber</div>
-          <div class="nutrition-stat-value">${food.fiber}g</div>
-        </div>
-        <div class="nutrition-stat">
-          <div class="nutrition-stat-label">Iron</div>
-          <div class="nutrition-stat-value">${food.iron} mg</div>
-        </div>
-        <div class="nutrition-stat">
-          <div class="nutrition-stat-label">Calcium</div>
-          <div class="nutrition-stat-value">${food.calcium} mg</div>
-        </div>
-        <div class="nutrition-stat">
-          <div class="nutrition-stat-label">Omega-3</div>
-          <div class="nutrition-stat-value">${food.omega_3} g</div>
-        </div>
-        <div class="nutrition-stat">
-          <div class="nutrition-stat-label">Serving</div>
-          <div class="nutrition-stat-value">${food.serving_basis}</div>
+        <div class="preview-pill fats">
+          <i class="bi bi-droplet-half"></i>
+          <span>Fats</span>
+          <strong>${food.fats}g</strong>
         </div>
       </div>
 
-      <div class="chart-hover-panel">
-        <div class="chart-title">Nutrition Snapshot</div>
-        <div class="mini-chart">
-          ${buildNutritionChart(food)}
+      <div class="hover-hint">
+        <i class="bi bi-arrows-angle-expand me-1"></i>Hover to view full nutrition
+      </div>
+
+      <div class="recommendation-hover-panel">
+        <div class="hover-panel-header">
+          <h6 class="mb-0">Full Nutrition Values</h6>
+          <span class="hover-panel-subtitle">Based on ${food.serving_basis}</span>
+        </div>
+
+        <div class="nutrition-detail-grid">
+          <div class="nutrition-detail-item">
+            <span>Calories</span>
+            <strong>${food.calories} kcal</strong>
+          </div>
+          <div class="nutrition-detail-item">
+            <span>Protein</span>
+            <strong>${food.protein}g</strong>
+          </div>
+          <div class="nutrition-detail-item">
+            <span>Carbs</span>
+            <strong>${food.carbs}g</strong>
+          </div>
+          <div class="nutrition-detail-item">
+            <span>Fats</span>
+            <strong>${food.fats}g</strong>
+          </div>
+          <div class="nutrition-detail-item">
+            <span>Fiber</span>
+            <strong>${food.fiber}g</strong>
+          </div>
+          <div class="nutrition-detail-item">
+            <span>Iron</span>
+            <strong>${food.iron} mg</strong>
+          </div>
+          <div class="nutrition-detail-item">
+            <span>Calcium</span>
+            <strong>${food.calcium} mg</strong>
+          </div>
+          <div class="nutrition-detail-item">
+            <span>Omega-3</span>
+            <strong>${food.omega_3} g</strong>
+          </div>
+        </div>
+
+        <div class="chart-hover-panel compact-chart-panel">
+          <div class="chart-title">Nutrition Snapshot</div>
+          <div class="mini-chart">
+            ${buildNutritionChart(food)}
+          </div>
         </div>
       </div>
-    </div>
+    </article>
   `;
 }
 async function loadRecommendationsPage() {

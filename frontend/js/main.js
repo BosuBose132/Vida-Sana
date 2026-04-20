@@ -231,120 +231,65 @@ function buildRecommendationCard(food) {
   const badges = [];
 
   if (food.is_nut_free) {
-    badges.push(
-      '<span class="recommendation-flag"><i class="bi bi-shield-check me-1"></i>Nut Free</span>',
-    );
+    badges.push('<span class="recommendation-flag">Nut Free</span>');
   }
 
   if (food.is_soy_free) {
-    badges.push(
-      '<span class="recommendation-flag"><i class="bi bi-shield-check me-1"></i>Soy Free</span>',
-    );
+    badges.push('<span class="recommendation-flag">Soy Free</span>');
   }
 
   if (food.is_gluten_free) {
-    badges.push(
-      '<span class="recommendation-flag"><i class="bi bi-shield-check me-1"></i>Gluten Free</span>',
-    );
+    badges.push('<span class="recommendation-flag">Gluten Free</span>');
   }
 
   return `
-    <article class="recommendation-food-card">
-      <div class="recommendation-card-top">
-        <div class="recommendation-title-wrap">
-          <div class="recommendation-icon-circle">
-            <i class="bi bi-flower1"></i>
-          </div>
-          <div>
-            <h4 class="recommendation-title mb-1">${food.food_name}</h4>
-            <span class="recommendation-category-badge">${food.category_name}</span>
-          </div>
+    <article class="food-card-compact">
+      <div class="food-card-top">
+        <div class="food-card-icon">
+          <i class="bi bi-flower1"></i>
         </div>
-
-        <div class="recommendation-calorie-box">
-          <span class="recommendation-serving-label">Per ${food.serving_basis}</span>
-          <strong class="recommendation-calorie-value">${food.calories} kcal</strong>
+        <div class="food-card-heading">
+          <h5 class="food-card-title mb-1">${food.food_name}</h5>
+          <span class="recommendation-category-badge">${food.category_name}</span>
         </div>
       </div>
 
-      <p class="recommendation-description">${food.description}</p>
-
-      <div class="recommendation-reason">
-        <i class="bi bi-lightbulb me-2"></i>${food.recommendationReason}
+      <div class="food-card-meta">
+        <span class="food-serving">Per ${food.serving_basis}</span>
+        <span class="food-calories">${food.calories} kcal</span>
       </div>
 
-      <div class="recommendation-badges">
-        ${badges.join("")}
-      </div>
+      <p class="food-card-description">${food.description}</p>
 
-      <div class="recommendation-preview-row">
-        <div class="preview-pill protein">
-          <i class="bi bi-lightning-charge-fill"></i>
+      <div class="macro-preview">
+        <div class="macro-pill protein">
           <span>Protein</span>
           <strong>${food.protein}g</strong>
         </div>
-        <div class="preview-pill carbs">
-          <i class="bi bi-circle-square"></i>
+        <div class="macro-pill carbs">
           <span>Carbs</span>
           <strong>${food.carbs}g</strong>
         </div>
-        <div class="preview-pill fats">
-          <i class="bi bi-droplet-half"></i>
+        <div class="macro-pill fats">
           <span>Fats</span>
           <strong>${food.fats}g</strong>
         </div>
       </div>
 
-      <div class="hover-hint">
-        <i class="bi bi-arrows-angle-expand me-1"></i>Hover to view full nutrition
+      <div class="recommendation-badges compact">
+        ${badges.join("")}
       </div>
 
-      <div class="recommendation-hover-panel">
-        <div class="hover-panel-header">
-          <h6 class="mb-0">Full Nutrition Values</h6>
-          <span class="hover-panel-subtitle">Based on ${food.serving_basis}</span>
+      <div class="food-hover-panel">
+        <div class="hover-grid">
+          <div class="hover-item"><span>Fiber</span><strong>${food.fiber}g</strong></div>
+          <div class="hover-item"><span>Iron</span><strong>${food.iron} mg</strong></div>
+          <div class="hover-item"><span>Calcium</span><strong>${food.calcium} mg</strong></div>
+          <div class="hover-item"><span>Omega-3</span><strong>${food.omega_3} g</strong></div>
         </div>
 
-        <div class="nutrition-detail-grid">
-          <div class="nutrition-detail-item">
-            <span>Calories</span>
-            <strong>${food.calories} kcal</strong>
-          </div>
-          <div class="nutrition-detail-item">
-            <span>Protein</span>
-            <strong>${food.protein}g</strong>
-          </div>
-          <div class="nutrition-detail-item">
-            <span>Carbs</span>
-            <strong>${food.carbs}g</strong>
-          </div>
-          <div class="nutrition-detail-item">
-            <span>Fats</span>
-            <strong>${food.fats}g</strong>
-          </div>
-          <div class="nutrition-detail-item">
-            <span>Fiber</span>
-            <strong>${food.fiber}g</strong>
-          </div>
-          <div class="nutrition-detail-item">
-            <span>Iron</span>
-            <strong>${food.iron} mg</strong>
-          </div>
-          <div class="nutrition-detail-item">
-            <span>Calcium</span>
-            <strong>${food.calcium} mg</strong>
-          </div>
-          <div class="nutrition-detail-item">
-            <span>Omega-3</span>
-            <strong>${food.omega_3} g</strong>
-          </div>
-        </div>
-
-        <div class="chart-hover-panel compact-chart-panel">
-          <div class="chart-title">Nutrition Snapshot</div>
-          <div class="mini-chart">
-            ${buildNutritionChart(food)}
-          </div>
+        <div class="hover-reason">
+          ${food.recommendationReason}
         </div>
       </div>
     </article>

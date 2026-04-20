@@ -328,7 +328,16 @@ async function loadRecommendationsPage() {
     return;
   }
 
-  const profile = JSON.parse(storedProfile);
+  let profile;
+  try {
+    profile = JSON.parse(storedProfile);
+  } catch (error) {
+    recommendationsState.innerHTML =
+      '<p class="text-muted mb-0">Stored calculator data is invalid. Please complete the calculator again.</p>';
+    recommendationSummaryText.textContent =
+      "Please recalculate your profile to load recommendations.";
+    return;
+  }
 
   if (profileTargetCalories) {
     profileTargetCalories.textContent = `${profile.targetCalories} kcal/day`;
@@ -371,7 +380,7 @@ async function loadRecommendationsPage() {
 
     const foods = result.data.recommendedFoods || [];
 
-    recommendationSummaryText.textContent = `Showing foods matched to your goal of ${result.data.goal} with nutrition values per 100g.`;
+    recommendationSummaryText.textContent = `Showing foods matched to your goal of ${result.data.goal}. Nutrition values are displayed using the serving basis listed on each food card.`;
 
     if (foods.length === 0) {
       recommendationsState.innerHTML =

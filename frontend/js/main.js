@@ -284,15 +284,15 @@ function buildRecommendationCard(food) {
         </div>
         <div class="nutrition-stat">
           <div class="nutrition-stat-label">Iron</div>
-          <div class="nutrition-stat-value">${food.iron}</div>
+          <div class="nutrition-stat-value">${food.iron} mg</div>
         </div>
         <div class="nutrition-stat">
           <div class="nutrition-stat-label">Calcium</div>
-          <div class="nutrition-stat-value">${food.calcium}</div>
+          <div class="nutrition-stat-value">${food.calcium} mg</div>
         </div>
         <div class="nutrition-stat">
           <div class="nutrition-stat-label">Omega-3</div>
-          <div class="nutrition-stat-value">${food.omega_3}</div>
+          <div class="nutrition-stat-value">${food.omega_3} g</div>
         </div>
         <div class="nutrition-stat">
           <div class="nutrition-stat-label">Serving</div>

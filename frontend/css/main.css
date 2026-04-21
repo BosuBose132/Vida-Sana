@@ -1054,3 +1054,196 @@ textarea.custom-input {
     font-size: 1rem;
   }
 }
+
+/* ===== DASHBOARD WRAPPER (positions sidebar to the RIGHT) ===== */
+.vs-dash{
+  padding: 30px 0;
+}
+
+/* ===== SIDEBAR PANEL (Document-1) ===== */
+.vs-sidepanel {
+  background: var(--vs-glass);
+  border: 1px solid rgba(160, 190, 120, 0.30);
+  border-radius: 22px;
+  padding: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+}
+
+/* optional sticky on desktop */
+@media (min-width: 992px) {
+  .vs-sidepanel { position: sticky; top: 110px; }
+}
+
+.vs-sidepanel-top { display: grid; gap: 10px; margin-bottom: 14px; }
+
+.vs-sidepanel-title {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 900; color: var(--vs-text);
+  background: rgba(255,255,255,0.40);
+  border: 1px solid rgba(160, 190, 120, 0.25);
+  padding: 10px 12px; border-radius: 14px;
+}
+
+.vs-sidepanel-count{
+  margin-left:auto; font-weight:900;
+  background: rgba(111,159,47,0.12);
+  padding:4px 10px; border-radius:999px;
+}
+
+.vs-sidepanel-pill{
+  display:flex; align-items:center; gap:10px;
+  padding:10px 12px; border-radius:14px;
+  background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(160,190,120,0.25);
+  font-weight:800; color:#2f6f2f;
+}
+.vs-sidepanel-pill-arrow{ margin-left:auto; font-size:18px; opacity:.75; }
+
+.vs-sidegrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+  margin-bottom:14px;
+}
+.vs-sidegrid-2{ grid-template-columns:1fr 1fr; }
+
+.vs-sidecard{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(160,190,120,0.22);
+  border-radius:16px;
+  padding:12px;
+  min-height:70px;
+}
+
+.vs-sidecard-text h6{ margin:0; font-weight:900; color:var(--vs-text); }
+.vs-sidecard-text p{ margin:2px 0 0; color:var(--vs-muted); font-weight:700; font-size:.9rem; }
+
+.vs-sidethumb{
+  width:42px; height:42px;
+  border-radius:14px;
+  display:grid; place-items:center;
+  background: rgba(111,159,47,0.12);
+  font-size:20px;
+}
+
+.vs-sidepanel-subtitle{
+  font-weight:900; color:var(--vs-text);
+  margin:4px 0 12px;
+}
+
+/* Make sidebar match left panel height and remove “floating white gap” feeling */
+.vs-sidepanel {
+  height: 100%;
+}
+
+/* RIGHT SIDEBAR: green glass / same theme */
+.vs-sidepanel {
+  background: linear-gradient(
+    135deg,
+    rgba(238, 247, 223, 0.75),
+    rgba(247, 251, 239, 0.55)
+  );
+  border: 1px solid rgba(160, 190, 120, 0.35);
+  border-radius: 22px;
+  padding: 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+/* Top title row looks more “premium” */
+.vs-sidepanel-title {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(160, 190, 120, 0.28);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+/* Vegan replacements pill highlight */
+.vs-sidepanel-pill {
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(160, 190, 120, 0.28);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+/* Small cards inside sidebar */
+.vs-sidecard {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(160, 190, 120, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+}
+
+/* Right-side emoji thumbs */
+.vs-sidethumb {
+  background: rgba(111, 159, 47, 0.12);
+  border: 1px solid rgba(111, 159, 47, 0.18);
+  border-radius: 14px;
+}
+
+/* Sidebar extra section */
+.vs-sidepanel-extra {
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.vs-mini-card {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(160, 190, 120, 0.25);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+}
+
+.vs-mini-title {
+  font-weight: 900;
+  color: #203020;
+  margin-bottom: 10px;
+}
+
+.vs-mini-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(160, 190, 120, 0.22);
+}
+
+.vs-mini-row:last-of-type {
+  border-bottom: none;
+}
+
+.vs-mini-label {
+  color: rgba(32, 48, 32, 0.75);
+  font-weight: 800;
+}
+
+.vs-mini-value {
+  font-weight: 900;
+  color: #2f6f2f;
+}
+
+.vs-mini-note {
+  margin-top: 10px;
+  color: rgba(32, 48, 32, 0.75);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* Quick chips */
+.vs-quick-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: rgba(111, 159, 47, 0.12);
+  border: 1px solid rgba(111, 159, 47, 0.20);
+  font-weight: 800;
+  color: #2f3d1f;
+  margin: 6px 0;
+}

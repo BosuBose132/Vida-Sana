@@ -1178,3 +1178,138 @@ textarea.custom-input {
   color: #2f3d1f;
   margin: 6px 0;
 }
+
+/* MAIN column should use full width (avoid nested container shrinking) */
+.vs-main-inner{
+  width: 100%;
+  max-width: 100%;
+  padding-left: 0;   /* remove extra container padding */
+  padding-right: 0;
+}
+
+/* optional: keep same spacing like Bootstrap container */
+@media (min-width: 992px){
+  .vs-main-inner{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.vs-sidepanel{
+  background:
+    radial-gradient(circle at 30% 20%, rgba(111,159,47,0.18), transparent 55%),
+    linear-gradient(135deg, rgba(238,247,223,0.85), rgba(247,251,239,0.65));
+  border: 1px solid rgba(160, 190, 120, 0.35);
+}
+
+/* remove the tiny left gap in the main (left) area */
+.vs-main-area{
+  padding-left: 0 !important;
+}
+
+.vs-main-inner{
+  width: 100%;
+  max-width: 100%;
+  padding-left: -1 !important;
+  padding-right: -1 !important;
+}
+
+/* ===== HOME: Nutrients Grid (left only) ===== */
+.vs-nutrient-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.vs-nutrient-card {
+  background: var(--vs-glass);
+  border: 1px solid rgba(160, 190, 120, 0.30);
+  border-radius: 16px;
+  padding: 14px 14px 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  backdrop-filter: blur(10px);
+}
+
+.vs-nutrient-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  color: var(--vs-text);
+  margin-bottom: 6px;
+}
+
+.vs-check {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(111, 159, 47, 0.12);
+  border: 1px solid rgba(111, 159, 47, 0.20);
+  font-size: 14px;
+}
+
+.vs-nutrient-sub {
+  color: var(--vs-muted);
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 575.98px) {
+  .vs-nutrient-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== HOME: Important Note styling ===== */
+.vs-note-box {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.55),
+    rgba(233, 247, 238, 0.55)
+  );
+  border: 1px solid rgba(160, 190, 120, 0.30);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* soft glow / decorative corner */
+.vs-note-box::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    rgba(111, 159, 47, 0.20),
+    transparent 60%
+  );
+  opacity: 0.8;
+}
+
+.vs-note-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vs-note-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(111, 159, 47, 0.12);
+  border: 1px solid rgba(111, 159, 47, 0.20);
+  font-size: 20px;
+}
+
+.vs-check {
+  font-size: 16px;
+}

@@ -17,7 +17,7 @@
   background: #ffffff;
 }
 
-/* ===== NAVBAR (img-2 layout + img-1 colors) ===== */
+/* ===== NAVBAR SECTION===== */
 .vs-navbar {
   padding: 16px 0;
   background: linear-gradient(to right, var(--vs-bg1), var(--vs-bg2));
@@ -102,7 +102,7 @@
   background: var(--vs-green-dark);
 }
 
-/* ===== HERO (img-1 style) ===== */
+/* ===== HERO STYLE===== */
 .vs-hero {
   background:
     radial-gradient(circle at 15% 25%, rgba(180, 220, 120, 0.30), transparent 45%),
@@ -639,7 +639,7 @@
 .vs-grid::-webkit-scrollbar-thumb:hover {
   background: rgba(111, 159, 47, 0.65);
 }
-/* FORCE green-tinted card backgrounds (override any previous .vs-card styles) */
+/*green-tinted card backgrounds (override any previous .vs-card styles) */
 .vs-card {
   background: linear-gradient(
     135deg,
@@ -821,4 +821,167 @@ textarea.custom-input {
     radial-gradient(circle at 90% 15%, rgba(120, 190, 120, 0.12), transparent 50%),
     linear-gradient(to right, var(--vs-bg1), var(--vs-bg2));
   border-top: 1px solid rgba(223, 233, 207, 0.8);
+}
+
+/* ===== STATS BAR (Sample-1 exact style) ===== */
+.vs-stats-wrap{
+  margin-top: 22px;              /* space below hero */
+  margin-bottom: 8px;
+}
+
+.vs-stats-card{
+  width: 100%;
+  max-width: 1120px;             /* controls the exact length */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 0;
+
+  padding: 22px 26px;
+  border-radius: 22px;
+
+  /* the 3-color gradient background */
+  background: linear-gradient(90deg,
+    rgba(219, 238, 197, 0.75) 0%,
+    rgba(247, 236, 206, 0.75) 50%,
+    rgba(226, 214, 239, 0.75) 100%
+  );
+
+  border: 1px solid rgba(160, 190, 120, 0.35);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+  backdrop-filter: blur(10px);
+}
+
+.vs-stat{
+  text-align: center;
+  padding: 6px 10px;
+}
+
+.vs-stat-top{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.vs-stat-number{
+  font-weight: 900;
+  font-size: 52px;               /* matches Sample-1 */
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.vs-stat-green{ color: #2f6f2f; }
+.vs-stat-orange{ color: #e28a12; }
+.vs-stat-purple{ color: #6b55e6; }
+
+.vs-stat-emoji{
+  font-size: 26px;               /* leaf size next to 7 */
+  line-height: 1;
+  transform: translateY(2px);
+}
+
+.vs-stat-label{
+  font-weight: 800;
+  font-size: 18px;
+  color: rgba(32, 48, 32, 0.82);
+}
+
+.vs-stat-divider{
+  width: 2px;
+  height: 62px;
+  background: rgba(120, 150, 105, 0.25);
+  border-radius: 999px;
+}
+
+/* Mobile: stack nicely */
+@media (max-width: 768px){
+  .vs-stats-card{
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 18px 16px;
+  }
+  .vs-stat-divider{
+    display: none;
+  }
+  .vs-stat-number{
+    font-size: 44px;
+  }
+}
+
+.vs-stats-card{ background: ... !important; max-width:1120px !important; }
+.vs-stat-number{ font-size:52px !important; }
+.vs-stat-label{ font-size:18px !important; }
+
+/* ===== Hero image pills (Sample 2 style) ===== */
+.hero-image-placeholder {
+  position: relative;         /* important */
+  overflow: hidden;           /* keeps pills inside rounded corners */
+}
+
+.vs-hero-pills {
+  position: absolute;
+  right: 26px;
+  bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 5;
+}
+
+/* pill base */
+.vs-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 26px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  line-height: 1;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(6px);
+}
+
+/* icon size */
+.vs-pill-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+/* text style */
+.vs-pill-text {
+  white-space: nowrap;
+}
+
+/* colors like your screenshot */
+.vs-pill-green {
+  background: rgba(200, 230, 180, 0.92);
+  color: #1f3a20;
+}
+
+.vs-pill-yellow {
+  background: rgba(255, 228, 160, 0.92);
+  color: #2a2a2a;
+}
+
+.vs-pill-purple {
+  background: rgba(210, 195, 245, 0.92);
+  color: #3a2a6a;
+}
+
+/* responsive: keep pills inside image on small screens */
+@media (max-width: 768px) {
+  .vs-hero-pills {
+    right: 14px;
+    bottom: 14px;
+    gap: 10px;
+  }
+  .vs-pill {
+    padding: 12px 18px;
+    font-size: 1rem;
+  }
 }

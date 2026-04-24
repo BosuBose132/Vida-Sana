@@ -859,19 +859,22 @@ textarea.custom-input {
   background: linear-gradient(135deg, #ffffff 0%, #fbfdfb 100%);
   border-radius: 22px;
   padding: 18px;
-  min-height: 220px;
+  min-height: 240px;
   box-shadow: 0 10px 24px rgba(31, 111, 67, 0.06);
   transition:
     transform 0.28s ease,
     box-shadow 0.28s ease,
     border-color 0.28s ease;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .compact-hover-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 18px 34px rgba(31, 111, 67, 0.12);
   border-color: #d8e9de;
+  z-index: 20;
 }
 
 .compact-card-header {
@@ -939,11 +942,17 @@ textarea.custom-input {
   padding: 14px;
   opacity: 0;
   transform: translateY(12px);
-  pointer-events: none;
+  pointer-events: auto;
   transition:
     opacity 0.25s ease,
     transform 0.25s ease;
   box-shadow: 0 14px 28px rgba(31, 111, 67, 0.1);
+  max-height: 260px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 5;
+  scrollbar-width: thin;
+  scrollbar-color: #9fbe8d #edf3ee;
 }
 
 .compact-hover-card:hover .compact-hover-panel {
@@ -953,6 +962,24 @@ textarea.custom-input {
 
 .compact-hover-card:hover .compact-card-hover-hint {
   opacity: 0.08;
+}
+/* Scrolling styles for hover panel */
+.compact-hover-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.compact-hover-panel::-webkit-scrollbar-track {
+  background: #edf3ee;
+  border-radius: 999px;
+}
+
+.compact-hover-panel::-webkit-scrollbar-thumb {
+  background: #9fbe8d;
+  border-radius: 999px;
+}
+
+.compact-hover-panel::-webkit-scrollbar-thumb:hover {
+  background: #7ea66c;
 }
 
 /* hover panel header */

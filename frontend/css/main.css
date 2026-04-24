@@ -846,207 +846,95 @@ textarea.custom-input {
   color: #23362a;
 }
 
-/* grid */
+/* grid layout */
 .recommendations-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 18px;
 }
 
-/* main card */
-.recommendation-food-card {
+/* compact card */
+.compact-hover-card {
   position: relative;
   background: linear-gradient(135deg, #ffffff 0%, #fbfdfb 100%);
-  border: 1px solid #e6efe8;
-  border-radius: 24px;
+  border-radius: 22px;
   padding: 18px;
-  box-shadow: 0 8px 24px rgba(31, 111, 67, 0.06);
+  min-height: 220px;
+  box-shadow: 0 10px 24px rgba(31, 111, 67, 0.06);
   transition:
     transform 0.28s ease,
     box-shadow 0.28s ease,
     border-color 0.28s ease;
   overflow: hidden;
-  min-height: 370px;
 }
 
-.recommendation-food-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(31, 111, 67, 0.12);
-  border-color: #d7e9dd;
+.compact-hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 34px rgba(31, 111, 67, 0.12);
+  border-color: #d8e9de;
 }
 
-/* top section */
-.recommendation-card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 14px;
-  margin-bottom: 12px;
-}
-
-.recommendation-title-wrap {
+.compact-card-header {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  min-width: 0;
+  margin-bottom: 14px;
 }
 
-.recommendation-icon-circle {
-  width: 46px;
-  height: 46px;
+.compact-card-icon {
+  width: 44px;
+  height: 44px;
   border-radius: 14px;
   display: grid;
   place-items: center;
   background: linear-gradient(135deg, #eef8f1, #dff1e6);
   color: #198754;
-  font-size: 1.1rem;
+  font-size: 1rem;
   flex-shrink: 0;
 }
 
-.recommendation-title {
+.compact-card-title {
   font-size: 1.2rem;
   font-weight: 800;
-  color: #1f2d25;
-  line-height: 1.15;
+  color: #203126;
+  line-height: 1.2;
 }
 
-.recommendation-category-badge {
+.compact-card-category {
   display: inline-block;
-  padding: 6px 10px;
+  padding: 5px 10px;
   border-radius: 999px;
-  background-color: #eef8f1;
+  background: #eef8f1;
   color: #1f6f43;
-  font-size: 0.76rem;
+  border: 1px solid #d7ebdd;
+  font-size: 0.75rem;
   font-weight: 700;
-  border: 1px solid #d8ebde;
 }
 
-.recommendation-calorie-box {
-  text-align: right;
-  flex-shrink: 0;
-}
-
-.recommendation-serving-label {
-  display: block;
-  font-size: 0.8rem;
-  color: #75827b;
-  font-weight: 600;
-  margin-bottom: 2px;
-}
-
-.recommendation-calorie-value {
-  color: #198754;
-  font-size: 1rem;
-  font-weight: 800;
-}
-
-/* content */
-.recommendation-description {
-  color: #58665e;
-  line-height: 1.55;
-  font-size: 0.94rem;
+.compact-card-description {
+  color: #56645b;
+  line-height: 1.6;
+  font-size: 0.93rem;
   margin-bottom: 14px;
-  min-height: 44px;
+  max-width: 95%;
 }
 
-.recommendation-reason {
-  display: flex;
-  align-items: flex-start;
-  background: linear-gradient(135deg, #f7fbf8, #f1f8f3);
-  border: 1px solid #e2eee6;
-  border-radius: 16px;
-  padding: 12px 14px;
-  color: #445349;
-  font-size: 0.9rem;
-  margin-bottom: 14px;
-}
-
-.recommendation-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 14px;
-}
-
-.recommendation-flag {
+.compact-card-hover-hint {
   display: inline-flex;
   align-items: center;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background-color: #ffffff;
-  color: #355242;
-  font-size: 0.74rem;
+  gap: 6px;
+  color: #6d7b73;
+  font-size: 0.82rem;
   font-weight: 600;
-  border: 1px solid #dcebe1;
-}
-
-/* preview macros */
-.recommendation-preview-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  transition:
-    opacity 0.22s ease,
-    transform 0.22s ease;
-}
-
-.preview-pill {
-  border-radius: 16px;
-  padding: 12px 10px;
-  text-align: center;
-  border: 1px solid #e6efe8;
-}
-
-.preview-pill i {
-  display: block;
-  font-size: 0.95rem;
-  margin-bottom: 6px;
-}
-
-.preview-pill span {
-  display: block;
-  font-size: 0.72rem;
-  color: #6f7c75;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-.preview-pill strong {
-  font-size: 0.95rem;
-  color: #203126;
-  font-weight: 800;
-}
-
-.preview-pill.protein {
-  background: rgba(82, 183, 136, 0.1);
-}
-
-.preview-pill.carbs {
-  background: rgba(255, 199, 0, 0.12);
-}
-
-.preview-pill.fats {
-  background: rgba(71, 124, 221, 0.1);
-}
-
-/* hover hint */
-.hover-hint {
-  color: #7a867f;
-  font-size: 0.83rem;
-  font-weight: 600;
-  margin-top: 12px;
   transition: opacity 0.22s ease;
 }
 
-/* hidden full panel */
-.recommendation-hover-panel {
+/* hidden hover panel */
+.compact-hover-panel {
   position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 18px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), #f7fbf8);
-  border: 1px solid #e2eee6;
+  inset: 14px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid #e3efe7;
   border-radius: 18px;
   padding: 14px;
   opacity: 0;
@@ -1055,22 +943,20 @@ textarea.custom-input {
   transition:
     opacity 0.25s ease,
     transform 0.25s ease;
-  box-shadow: 0 12px 28px rgba(31, 111, 67, 0.08);
+  box-shadow: 0 14px 28px rgba(31, 111, 67, 0.1);
 }
 
-.recommendation-food-card:hover .recommendation-hover-panel {
+.compact-hover-card:hover .compact-hover-panel {
   opacity: 1;
   transform: translateY(0);
 }
 
-.recommendation-food-card:hover .recommendation-preview-row,
-.recommendation-food-card:hover .hover-hint,
-.recommendation-food-card:hover .recommendation-badges {
+.compact-hover-card:hover .compact-card-hover-hint {
   opacity: 0.08;
 }
 
-/* hover panel internals */
-.hover-panel-header {
+/* hover panel header */
+.compact-hover-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1078,101 +964,60 @@ textarea.custom-input {
   margin-bottom: 12px;
 }
 
-.hover-panel-header h6 {
+.compact-hover-header h6 {
   font-weight: 700;
-  color: #24362b;
+  color: #203126;
 }
 
-.hover-panel-subtitle {
-  font-size: 0.8rem;
-  color: #7a867f;
+.compact-hover-subtitle {
+  font-size: 0.78rem;
+  color: #708076;
   font-weight: 600;
 }
 
-.nutrition-detail-grid {
+/* nutrition progress bars */
+.nutrition-progress-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  margin-bottom: 12px;
 }
 
-.nutrition-detail-item {
-  background: #ffffff;
-  border: 1px solid #e7efe9;
-  border-radius: 14px;
-  padding: 10px;
-  text-align: center;
+.nutrition-progress-row {
+  display: grid;
+  gap: 5px;
 }
 
-.nutrition-detail-item span {
-  display: block;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  color: #7a867f;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.nutrition-detail-item strong {
-  font-size: 0.9rem;
-  color: #203126;
-  font-weight: 800;
-}
-
-/* compact chart */
-.compact-chart-panel {
-  border-top: 1px solid #edf2ee;
-  padding-top: 12px;
-}
-
-.chart-title {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #365344;
-  margin-bottom: 10px;
-}
-
-.mini-chart {
+.nutrition-progress-top {
   display: flex;
-  align-items: end;
+  justify-content: space-between;
+  align-items: center;
   gap: 8px;
-  min-height: 100px;
 }
 
-.chart-bar-group {
-  flex: 1;
-  text-align: center;
-}
-
-.chart-bar-track {
-  height: 72px;
-  display: flex;
-  align-items: end;
-  justify-content: center;
-  background: linear-gradient(180deg, #f9fcfa 0%, #f1f8f3 100%);
-  border: 1px solid #e4eee7;
-  border-radius: 12px;
-  padding: 6px;
-  margin-bottom: 6px;
-}
-
-.chart-bar {
-  width: 100%;
-  border-radius: 10px 10px 6px 6px;
-  background: linear-gradient(180deg, #52b67a 0%, #198754 100%);
-  transition: height 0.25s ease;
-}
-
-.chart-label {
-  font-size: 0.68rem;
+.nutrition-progress-label {
+  font-size: 0.78rem;
   font-weight: 700;
-  color: #5e6b63;
+  color: #355242;
 }
 
-.chart-value {
-  font-size: 0.68rem;
-  color: #7a847d;
-  margin-top: 2px;
+.nutrition-progress-value {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #203126;
+}
+
+.nutrition-progress-track {
+  width: 100%;
+  height: 8px;
+  background: #edf3ee;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.nutrition-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #c9a13b 0%, #87b94f 45%, #198754 100%);
+  transition: width 0.35s ease;
 }
 
 /* responsive */
@@ -1182,20 +1027,13 @@ textarea.custom-input {
   }
 }
 
-@media (max-width: 767.98px) {
-  .recommendation-card-top {
+@media (max-width: 575.98px) {
+  .compact-hover-card {
+    min-height: 240px;
+  }
+
+  .compact-hover-header {
     flex-direction: column;
-  }
-
-  .recommendation-calorie-box {
-    text-align: left;
-  }
-
-  .recommendation-preview-row {
-    grid-template-columns: 1fr;
-  }
-
-  .nutrition-detail-grid {
-    grid-template-columns: 1fr;
+    align-items: flex-start;
   }
 }

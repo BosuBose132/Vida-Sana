@@ -187,109 +187,70 @@ async function loadNutrientsToWatch() {
     console.error("Nutrients API error:", error);
   }
 }
-function buildNutritionChart(food) {
-  const chartItems = [
-    {
-      label: "Protein",
-      value: Number(food.protein),
-      max: 30,
-    },
-    {
-      label: "Carbs",
-      value: Number(food.carbs),
-      max: 70,
-    },
-    {
-      label: "Fats",
-      value: Number(food.fats),
-      max: 50,
-    },
-    {
-      label: "Fiber",
-      value: Number(food.fiber),
-      max: 20,
-    },
+function buildNutritionRows(food) {
+  const nutritionItems = [
+    { label: "Calories", value: Number(food.calories), max: 700, unit: "kcal" },
+    { label: "Protein", value: Number(food.protein), max: 35, unit: "g" },
+    { label: "Carbs", value: Number(food.carbs), max: 70, unit: "g" },
+    { label: "Fats", value: Number(food.fats), max: 50, unit: "g" },
+    { label: "Fiber", value: Number(food.fiber), max: 20, unit: "g" },
+    { label: "Iron", value: Number(food.iron), max: 10, unit: "mg" },
+    { label: "Calcium", value: Number(food.calcium), max: 300, unit: "mg" },
+    { label: "Omega-3", value: Number(food.omega_3), max: 3, unit: "g" },
   ];
 
-  return chartItems
+  return nutritionItems
     .map((item) => {
-      const height = Math.max(10, Math.min((item.value / item.max) * 100, 100));
+      const percentage = Math.max(
+        6,
+        Math.min((item.value / item.max) * 100, 100),
+      );
 
       return `
-        <div class="chart-bar-group">
-          <div class="chart-bar-track">
-            <div class="chart-bar" style="height: ${height}%"></div>
+        <div class="nutrition-progress-row">
+          <div class="nutrition-progress-top">
+            <span class="nutrition-progress-label">${item.label}</span>
+            <span class="nutrition-progress-value">${item.value.toFixed(2)} ${item.unit}</span>
           </div>
-          <div class="chart-label">${item.label}</div>
-          <div class="chart-value">${item.value}g</div>
+          <div class="nutrition-progress-track">
+            <div class="nutrition-progress-fill" style="width: ${percentage}%"></div>
+          </div>
         </div>
       `;
     })
     .join("");
 }
+
 function buildRecommendationCard(food) {
-  const badges = [];
-
-  if (food.is_nut_free) {
-    badges.push('<span class="recommendation-flag">Nut Free</span>');
-  }
-
-  if (food.is_soy_free) {
-    badges.push('<span class="recommendation-flag">Soy Free</span>');
-  }
-
-  if (food.is_gluten_free) {
-    badges.push('<span class="recommendation-flag">Gluten Free</span>');
-  }
-
   return `
-    <article class="food-card-compact">
-      <div class="food-card-top">
-        <div class="food-card-icon">
+    <article class="recommendation-food-card compact-hover-card">
+      <div class="compact-card-header">
+        <div class="compact-card-icon">
           <i class="bi bi-flower1"></i>
         </div>
-        <div class="food-card-heading">
-          <h5 class="food-card-title mb-1">${food.food_name}</h5>
-          <span class="recommendation-category-badge">${food.category_name}</span>
+        <div>
+          <h4 class="compact-card-title mb-1">${food.food_name}</h4>
+          <span class="compact-card-category">${food.category_name}</span>
         </div>
       </div>
 
-      <div class="food-card-meta">
-        <span class="food-serving">Per ${food.serving_basis}</span>
-        <span class="food-calories">${food.calories} kcal</span>
+      <p class="compact-card-description">
+        ${food.description}
+      </p>
+
+      <div class="compact-card-hover-hint">
+        <i class="bi bi-bar-chart-line me-1"></i>
+        Hover to view nutrition
       </div>
 
-      <p class="food-card-description">${food.description}</p>
-
-      <div class="macro-preview">
-        <div class="macro-pill protein">
-          <span>Protein</span>
-          <strong>${food.protein}g</strong>
-        </div>
-        <div class="macro-pill carbs">
-          <span>Carbs</span>
-          <strong>${food.carbs}g</strong>
-        </div>
-        <div class="macro-pill fats">
-          <span>Fats</span>
-          <strong>${food.fats}g</strong>
-        </div>
-      </div>
-
-      <div class="recommendation-badges compact">
-        ${badges.join("")}
-      </div>
-
-      <div class="food-hover-panel">
-        <div class="hover-grid">
-          <div class="hover-item"><span>Fiber</span><strong>${food.fiber}g</strong></div>
-          <div class="hover-item"><span>Iron</span><strong>${food.iron} mg</strong></div>
-          <div class="hover-item"><span>Calcium</span><strong>${food.calcium} mg</strong></div>
-          <div class="hover-item"><span>Omega-3</span><strong>${food.omega_3} g</strong></div>
+      <div class="compact-hover-panel">
+        <div class="compact-hover-header">
+          <h6 class="mb-0">Nutrition Overview</h6>
+          <span class="compact-hover-subtitle">Per ${food.serving_basis}</span>
         </div>
 
-        <div class="hover-reason">
-          ${food.recommendationReason}
+        <div class="nutrition-progress-list">
+          ${buildNutritionRows(food)}
         </div>
       </div>
     </article>
@@ -366,7 +327,7 @@ async function loadRecommendationsPage() {
 
     const foods = result.data.recommendedFoods || [];
 
-    recommendationSummaryText.textContent = `Showing foods matched to your goal of ${result.data.goal}. Nutrition values are displayed using the serving basis listed on each food card.`;
+    recommendationSummaryText.textContent = `Showing foods matched to your goal of ${result.data.goal}. Hover on any item to view nutrition values.`;
 
     if (foods.length === 0) {
       recommendationsState.innerHTML =

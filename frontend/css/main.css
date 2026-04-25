@@ -787,3 +787,280 @@ textarea.custom-input {
     padding: 60px 0 40px;
   }
 }
+/* recommendations page adjustments */
+.recommendations-hero-section {
+  background: linear-gradient(to right, #f4fbf6, #ffffff);
+  padding: 80px 0 50px;
+}
+
+.recommendations-hero-card,
+.profile-summary-card,
+.recommendation-note-card,
+.recommendations-header-card,
+.recommendations-state-card,
+.recommendation-food-card {
+  border: 1px solid #edf1ed;
+}
+
+.recommendation-hero-list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 12px;
+  color: #4f5b52;
+  font-weight: 500;
+}
+
+.recommendation-hero-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #198754;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.profile-metric-list {
+  display: grid;
+  gap: 14px;
+}
+
+.profile-metric-item {
+  padding: 14px 16px;
+  border-radius: 16px;
+  background-color: #fbfdfb;
+  border: 1px solid #e7efe9;
+}
+
+.profile-metric-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #6a776d;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.profile-metric-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #23362a;
+}
+
+/* grid layout */
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+/* compact card */
+.compact-hover-card {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #fbfdfb 100%);
+  border-radius: 22px;
+  padding: 18px;
+  min-height: 240px;
+  box-shadow: 0 10px 24px rgba(31, 111, 67, 0.06);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.compact-hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 34px rgba(31, 111, 67, 0.12);
+  border-color: #d8e9de;
+  z-index: 20;
+}
+
+.compact-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.compact-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #eef8f1, #dff1e6);
+  color: #198754;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.compact-card-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #203126;
+  line-height: 1.2;
+}
+
+.compact-card-category {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #eef8f1;
+  color: #1f6f43;
+  border: 1px solid #d7ebdd;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.compact-card-description {
+  color: #56645b;
+  line-height: 1.6;
+  font-size: 0.93rem;
+  margin-bottom: 14px;
+  max-width: 95%;
+}
+
+.compact-card-hover-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #6d7b73;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: opacity 0.22s ease;
+}
+
+/* hidden hover panel */
+.compact-hover-panel {
+  position: absolute;
+  inset: 14px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid #e3efe7;
+  border-radius: 18px;
+  padding: 14px;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: auto;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  box-shadow: 0 14px 28px rgba(31, 111, 67, 0.1);
+  max-height: 260px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 5;
+  scrollbar-width: thin;
+  scrollbar-color: #9fbe8d #edf3ee;
+}
+
+.compact-hover-card:hover .compact-hover-panel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.compact-hover-card:hover .compact-card-hover-hint {
+  opacity: 0.08;
+}
+/* Scrolling styles for hover panel */
+.compact-hover-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.compact-hover-panel::-webkit-scrollbar-track {
+  background: #edf3ee;
+  border-radius: 999px;
+}
+
+.compact-hover-panel::-webkit-scrollbar-thumb {
+  background: #9fbe8d;
+  border-radius: 999px;
+}
+
+.compact-hover-panel::-webkit-scrollbar-thumb:hover {
+  background: #7ea66c;
+}
+
+/* hover panel header */
+.compact-hover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.compact-hover-header h6 {
+  font-weight: 700;
+  color: #203126;
+}
+
+.compact-hover-subtitle {
+  font-size: 0.78rem;
+  color: #708076;
+  font-weight: 600;
+}
+
+/* nutrition progress bars */
+.nutrition-progress-list {
+  display: grid;
+  gap: 10px;
+}
+
+.nutrition-progress-row {
+  display: grid;
+  gap: 5px;
+}
+
+.nutrition-progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.nutrition-progress-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #355242;
+}
+
+.nutrition-progress-value {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #203126;
+}
+
+.nutrition-progress-track {
+  width: 100%;
+  height: 8px;
+  background: #edf3ee;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.nutrition-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #c9a13b 0%, #87b94f 45%, #198754 100%);
+  transition: width 0.35s ease;
+}
+
+/* responsive */
+@media (max-width: 991.98px) {
+  .recommendations-hero-section {
+    padding: 60px 0 40px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .compact-hover-card {
+    min-height: 240px;
+  }
+
+  .compact-hover-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

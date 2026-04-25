@@ -62,4 +62,30 @@ VALUES
   ('Black Beans', 1, 132, 8.9, 23.7, 0.5, 8.7, 2.1, 27, 0.0, '100g', TRUE, TRUE, TRUE, 'weight_loss', 'Black beans are rich in protein and fiber, perfect for satiety and weight management.'),
   ('Edamame', 1, 121, 11.9, 8.9, 5.2, 5.0, 2.3, 61, 0.3, '100g', TRUE, FALSE, TRUE, 'muscle_gain', 'Edamame is young soybeans, high in protein, fiber, and antioxidants.'),
   ('Avocado', 3, 160, 2.0, 9.0, 15.0, 7.0, 0.6, 12, 0.1, '100g', TRUE, TRUE, TRUE, 'general_health', 'Avocado is rich in healthy fats and fiber, supports heart health and satiety.');
-
+INSERT INTO vegan_foods (
+  food_name,
+  category_id,
+  calories,
+  protein,
+  carbs,
+  fats,
+  fiber,
+  iron,
+  calcium,
+  omega_3,
+  serving_basis,
+  is_nut_free,
+  is_soy_free,
+  is_gluten_free,
+  goal_tag,
+  description
+)
+VALUES
+  ('Sweet Potato', 2, 86, 1.6, 20.1, 0.1, 3.0, 0.6, 30, 0.0, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Sweet potato provides steady energy, fiber, and useful vitamins for a balanced maintenance diet.'),
+  ('Quinoa Bowl Base', 2, 120, 4.4, 21.3, 1.9, 2.8, 1.5, 17, 0.1, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Quinoa is a balanced grain with protein and carbs, useful for daily energy maintenance.'),
+  ('Chickpeas Salad Mix', 1, 164, 9.0, 27.0, 2.6, 8.0, 2.9, 49, 0.1, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Chickpeas provide a balanced combination of protein, carbs, and fiber for everyday vegan meals.'),
+  ('Oat Milk', 3, 43, 1.0, 6.7, 1.3, 0.8, 0.1, 120, 0.0, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Oat milk is a soy-free plant milk option that fits a balanced vegan diet.'),
+  ('Pumpkin Seeds', 3, 559, 30.2, 10.7, 49.0, 6.0, 8.8, 46, 0.1, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Pumpkin seeds provide protein, iron, and healthy fats for balanced vegan eating.'),
+  ('Broccoli', 4, 34, 2.8, 6.6, 0.4, 2.6, 0.7, 47, 0.0, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Broccoli adds fiber, calcium, and micronutrients that support overall daily nutrition.'),
+  ('Spinach', 5, 23, 2.9, 3.6, 0.4, 2.2, 2.7, 99, 0.1, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Spinach is nutrient-dense and supports balanced vegan meals with iron and calcium.'),
+  ('Hummus', 1, 166, 7.9, 14.3, 9.6, 6.0, 2.4, 49, 0.1, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Hummus gives a balanced mix of plant protein, fiber, and healthy fats for maintenance goals.');

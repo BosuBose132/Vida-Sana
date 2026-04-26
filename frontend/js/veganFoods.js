@@ -26,6 +26,11 @@ const foodImageMap = {
   "pumpkin seeds": "../assets/pumpkin-seeds.jpeg",
   hummus: "../assets/hummus.jpeg",
   "oat milk": "../assets/oat-milk.jpeg",
+  "chickpeas salad mix": "../assets/chickpea-salad-mix.jpeg",
+  edamame: "../assets/edamame.jpeg",
+  "flax seeds": "../assets/flax-seeds.jpeg",
+  "quinoa bowl base": "../assets/quinoa-bowl.jpeg",
+  tempeh: "../assets/tempeh.jpeg",
 };
 
 function getFoodImage(foodName) {

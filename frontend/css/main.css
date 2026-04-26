@@ -1932,4 +1932,832 @@ body.vs-bg .result-card {
 body.vs-bg footer {
   background: transparent !important;
   border-top: 1px solid rgba(223, 233, 207, 0.8) !important;
+/* recommendations page adjustments */
+.recommendations-hero-section {
+  background: linear-gradient(to right, #f4fbf6, #ffffff);
+  padding: 80px 0 50px;
+}
+
+.recommendations-hero-card,
+.profile-summary-card,
+.recommendation-note-card,
+.recommendations-header-card,
+.recommendations-state-card,
+.recommendation-food-card {
+  border: 1px solid #edf1ed;
+}
+
+.recommendation-hero-list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 12px;
+  color: #4f5b52;
+  font-weight: 500;
+}
+
+.recommendation-hero-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #198754;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.profile-metric-list {
+  display: grid;
+  gap: 14px;
+}
+
+.profile-metric-item {
+  padding: 14px 16px;
+  border-radius: 16px;
+  background-color: #fbfdfb;
+  border: 1px solid #e7efe9;
+}
+
+.profile-metric-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #6a776d;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.profile-metric-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #23362a;
+}
+
+/* grid layout */
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+/* compact card */
+.compact-hover-card {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #fbfdfb 100%);
+  border-radius: 22px;
+  padding: 18px;
+  min-height: 240px;
+  box-shadow: 0 10px 24px rgba(31, 111, 67, 0.06);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.compact-hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 34px rgba(31, 111, 67, 0.12);
+  border-color: #d8e9de;
+  z-index: 20;
+}
+
+.compact-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.compact-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #eef8f1, #dff1e6);
+  color: #198754;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.compact-card-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #203126;
+  line-height: 1.2;
+}
+
+.compact-card-category {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #eef8f1;
+  color: #1f6f43;
+  border: 1px solid #d7ebdd;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.compact-card-description {
+  color: #56645b;
+  line-height: 1.6;
+  font-size: 0.93rem;
+  margin-bottom: 14px;
+  max-width: 95%;
+}
+
+.compact-card-hover-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #6d7b73;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: opacity 0.22s ease;
+}
+
+/* hidden hover panel */
+.compact-hover-panel {
+  position: absolute;
+  inset: 14px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid #e3efe7;
+  border-radius: 18px;
+  padding: 14px;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: auto;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  box-shadow: 0 14px 28px rgba(31, 111, 67, 0.1);
+  max-height: 260px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 5;
+  scrollbar-width: thin;
+  scrollbar-color: #9fbe8d #edf3ee;
+}
+
+.compact-hover-card:hover .compact-hover-panel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.compact-hover-card:hover .compact-card-hover-hint {
+  opacity: 0.08;
+}
+/* Scrolling styles for hover panel */
+.compact-hover-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.compact-hover-panel::-webkit-scrollbar-track {
+  background: #edf3ee;
+  border-radius: 999px;
+}
+
+.compact-hover-panel::-webkit-scrollbar-thumb {
+  background: #9fbe8d;
+  border-radius: 999px;
+}
+
+.compact-hover-panel::-webkit-scrollbar-thumb:hover {
+  background: #7ea66c;
+}
+
+/* hover panel header */
+.compact-hover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.compact-hover-header h6 {
+  font-weight: 700;
+  color: #203126;
+}
+
+.compact-hover-subtitle {
+  font-size: 0.78rem;
+  color: #708076;
+  font-weight: 600;
+}
+
+/* nutrition progress bars */
+.nutrition-progress-list {
+  display: grid;
+  gap: 10px;
+}
+
+.nutrition-progress-row {
+  display: grid;
+  gap: 5px;
+}
+
+.nutrition-progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.nutrition-progress-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #355242;
+}
+
+.nutrition-progress-value {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #203126;
+}
+
+.nutrition-progress-track {
+  width: 100%;
+  height: 8px;
+  background: #edf3ee;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.nutrition-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #c9a13b 0%, #87b94f 45%, #198754 100%);
+  transition: width 0.35s ease;
+}
+
+/* responsive */
+@media (max-width: 991.98px) {
+  .recommendations-hero-section {
+    padding: 60px 0 40px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .compact-hover-card {
+    min-height: 240px;
+  }
+
+  .compact-hover-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.card-img-top {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1); /* zoom effect */
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.scrolling-text {
+  display: flex;
+  gap: 40px;
+  white-space: nowrap;
+  animation: scrollLeft 15s linear infinite;
+}
+
+.scrolling-text span {
+  font-weight: 500;
+  color: #2f6f3e;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.feature-box {
+  transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  background-color: #f8fff9;
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.facts-section {
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+  font-family: Arial, sans-serif;
+}
+
+.facts-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #1b5e20;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* hide scrollbar */
+.facts-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card design */
+.fact {
+  min-width: 280px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+
+  padding: 20px;
+  border-radius: 18px;
+
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+  font-size: 15px;
+  line-height: 1.5;
+
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect */
+.fact:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* glow effect strip */
+.fact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(76, 175, 80, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.fact:hover::before {
+  left: 100%;
+}
+
+.facts-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 15px;
+
+  white-space: nowrap;
+}
+
+.facts-wrapper {
+  position: relative;
+}
+
+/* scroll container */
+.facts-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 15px;
+  scroll-behavior: smooth;
+}
+
+/* vegan foods page adjustmets to match homepage theme*/
+.foods-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.foods-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.food-db-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fbfdfb 100%);
+  border: 1px solid #e6efe8;
+  border-radius: 22px;
+  box-shadow: 0 10px 24px rgba(31, 111, 67, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  overflow: hidden;
+  height: 100%;
+}
+
+.food-db-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 34px rgba(31, 111, 67, 0.12);
+  border-color: #d9eadf;
+}
+
+.food-db-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.food-db-card-body {
+  padding: 18px;
+}
+
+.food-db-top {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.food-db-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #eef8f1, #dff1e6);
+  color: #198754;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.food-db-title {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: #203126;
+}
+
+.food-db-description {
+  color: #5b685f;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.food-db-category {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #eef8f1;
+  color: #1f6f43;
+  border: 1px solid #d8ebde;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.food-db-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.food-db-meta div {
+  background: #f8fbf9;
+  border: 1px solid #e5eee8;
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.food-db-meta span {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: #748178;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.food-db-meta strong {
+  color: #203126;
+  font-weight: 800;
+}
+
+.btn-success,
+.btn-success:focus,
+.btn-success:active {
+  background-color: var(--vs-green) !important;
+  border-color: var(--vs-green) !important;
+  box-shadow: none !important;
+}
+
+.btn-success:hover {
+  background-color: var(--vs-green-dark) !important;
+  border-color: var(--vs-green-dark) !important;
+}
+
+.btn-outline-success {
+  color: var(--vs-green) !important;
+  border-color: var(--vs-green) !important;
+}
+
+.btn-outline-success:hover,
+.btn-outline-success:focus,
+.btn-outline-success:active {
+  background-color: var(--vs-green) !important;
+  border-color: var(--vs-green) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+/* foods scroll in vegan foods section*/
+.foods-scroll-wrap {
+  max-height: 1120px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+}
+
+.foods-scroll-wrap::-webkit-scrollbar {
+  width: 8px;
+}
+
+.foods-scroll-wrap::-webkit-scrollbar-track {
+  background: #edf3ee;
+  border-radius: 999px;
+}
+
+.foods-scroll-wrap::-webkit-scrollbar-thumb {
+  background: #9fbe8d;
+  border-radius: 999px;
+}
+
+.foods-scroll-wrap::-webkit-scrollbar-thumb:hover {
+  background: #7ea66c;
+}
+/*page load transitions for vegan foods*/
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-on-load {
+    opacity: 0;
+    transform: translateY(22px);
+    animation: foodsRevealUp 0.7s ease forwards;
+  }
+
+  .reveal-delay-1 {
+    animation-delay: 0.08s;
+  }
+
+  .reveal-delay-2 {
+    animation-delay: 0.16s;
+  }
+
+  .reveal-delay-3 {
+    animation-delay: 0.24s;
+  }
+
+  .reveal-delay-4 {
+    animation-delay: 0.32s;
+  }
+
+  .reveal-delay-5 {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes foodsRevealUp {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.vs-chip,
+.vs-search-btn,
+.vs-search-input {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+}
+
+.vs-chip:hover,
+.vs-search-btn:hover {
+  transform: translateY(-1px);
+}
+
+.feature-box,
+.fact,
+.alert,
+.recommendations-state-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-4px);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .food-fade-in {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: foodCardFade 0.55s ease forwards;
+  }
+
+  @keyframes foodCardFade {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+/*--*/
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+/* Dark overlay for readability */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Content */
+.hero-content {
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #2e7d32;
+  transform: scale(1.05);
+}
+
+.facts-section {
+  padding: 40px 20px;
+  background: #f1f8e9;
+}
+
+.facts-section h2 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+.facts-section {
+  padding: 40px 20px;
+  background: #f1f8e9;
+}
+
+.facts-section h2 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+.facts-wrapper {
+  overflow-x: auto; /* enables horizontal scroll */
+}
+
+.facts-scroll {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+  /* width: max-content;   /* IMPORTANT: allows scrolling */
+}
+
+/* each fact box */
+.fact {
+  min-width: 260px; /* forces horizontal layout */
+  flex: 0 0 auto;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ scrollbar ONLY for facts */
+.facts-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.facts-wrapper::-webkit-scrollbar-track {
+  background: #e8f5e9;
+}
+
+.facts-wrapper::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
+
+.facts-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #2e7d32;
+}
+
+/*  This creates scroll for feature section */
+.feature-box:nth-of-type(1),
+.feature-box:nth-of-type(2),
+.feature-box:nth-of-type(3),
+.feature-box:nth-of-type(4) {
+  display: block;
+}
+
+/* wrap scrolling ONLY around feature group */
+.container.my-5:has(.feature-box) {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* scrollbar styling ONLY for feature section */
+.container.my-5:has(.feature-box)::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container.my-5:has(.feature-box)::-webkit-scrollbar-track {
+  background: #e8f5e9;
+}
+
+.container.my-5:has(.feature-box)::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
+
+.container.my-5:has(.feature-box)::-webkit-scrollbar-thumb:hover {
+  background: #2e7d32;
 }

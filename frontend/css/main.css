@@ -957,6 +957,51 @@ textarea.custom-input {
     padding: 60px 0 40px;
   }
 }
+/* Calculator page animations*/
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-on-load {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: revealUp 0.7s ease forwards;
+  }
+
+  .reveal-delay-1 {
+    animation-delay: 0.08s;
+  }
+
+  .reveal-delay-2 {
+    animation-delay: 0.18s;
+  }
+
+  .reveal-delay-3 {
+    animation-delay: 0.28s;
+  }
+
+  .reveal-delay-4 {
+    animation-delay: 0.38s;
+  }
+
+  @keyframes revealUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+.page-hero-visual,
+.form-card,
+.result-card,
+.personalized-nutrient-card,
+.hero-step-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
 
 /* Home: feature cards match replacements glass style */
 .feature-card {

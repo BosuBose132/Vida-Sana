@@ -4,7 +4,7 @@ const cors = require("cors");
 const nutrientRoutes = require("./src/routes/nutrientRoutes");
 const calorieRoutes = require("./src/routes/calorieRoutes");
 const recommendationRoutes = require("./src/routes/recommendationRoutes");
-const foodRoutes = require("./routes/foodRoutes");
+const foodRoutes = require("./src/routes/foodRoutes");
 const app = express();
 const PORT = 3000;
 

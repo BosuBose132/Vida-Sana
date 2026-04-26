@@ -7,29 +7,47 @@ const foodsSearchBtn = document.getElementById("foodsSearchBtn");
 let currentFoodsCategory = "";
 let currentFoodsSearch = "";
 
+const foodImageMap = {
+  tofu: "../assets/tofu.jpeg",
+  lentils: "../assets/lentils.jpeg",
+  chickpeas: "../assets/chickpeas.jpeg",
+  quinoa: "../assets/Quinoa.jpeg",
+  almonds: "../assets/Almonds.jpeg",
+  "chia seeds": "../assets/chiaseeds.jpeg",
+  spinach: "../assets/spinach.jpeg",
+  oats: "../assets/oats.jpeg",
+  "brown rice": "../assets/brown-rice.jpeg",
+  broccoli: "../assets/broccoli.jpeg",
+  "peanut butter": "../assets/peanut-butter.jpeg",
+  "soy milk": "../assets/soy-milk.jpeg",
+  "sweet potato": "../assets/sweet-potato.jpeg",
+  "black beans": "../assets/black-beans.jpeg",
+  avocado: "../assets/avocado.jpeg",
+  "pumpkin seeds": "../assets/pumpkin-seeds.jpeg",
+  hummus: "../assets/hummus.jpeg",
+  "oat milk": "../assets/oat-milk.jpeg",
+};
+
+function getFoodImage(foodName) {
+  const key = foodName.trim().toLowerCase();
+  return foodImageMap[key] || "../assets/default-food.jpeg";
+}
+
 function buildFoodCard(food) {
   return `
     <div class="col-md-6 col-lg-4 col-xl-3">
       <div class="food-db-card h-100">
-        <div class="food-db-card-body">
-          <div class="food-db-top">
-            <div class="food-db-icon"><i class="bi bi-flower1"></i></div>
-            <div>
-              <h5 class="food-db-title mb-1">${food.food_name}</h5>
-              <span class="food-db-category">${food.category_name}</span>
-            </div>
-          </div>
+        <img
+          src="${getFoodImage(food.food_name)}"
+          alt="${food.food_name}"
+          class="food-db-image"
+        />
 
-          <p class="food-db-description mt-3">
+        <div class="food-db-card-body">
+          <h5 class="food-db-title mb-2">${food.food_name}</h5>
+          <p class="food-db-description mb-0">
             ${food.description || "A nutritious vegan food option for your plant-based journey."}
           </p>
-
-          <div class="food-db-meta">
-            <div><span>Calories</span><strong>${food.calories} kcal</strong></div>
-            <div><span>Protein</span><strong>${food.protein}g</strong></div>
-            <div><span>Carbs</span><strong>${food.carbs}g</strong></div>
-            <div><span>Fats</span><strong>${food.fats}g</strong></div>
-          </div>
         </div>
       </div>
     </div>

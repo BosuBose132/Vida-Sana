@@ -9,6 +9,10 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="../css/main.css" />
   </head>
 
@@ -63,34 +67,105 @@
       <div class="container">
         <div class="row align-items-center gy-4">
           <div class="col-lg-7">
-            <span
-              class="badge rounded-pill text-bg-success-subtle text-success mb-3 px-3 py-2"
-            >
-              Personalized Wellness Guidance
-            </span>
-            <h1 class="display-6 fw-bold mb-3">
-              Calculate your daily calorie needs
-            </h1>
-            <p class="lead text-muted mb-0">
-              Enter your details to estimate your daily calorie requirement and
-              prepare for a more balanced vegan transition.
-            </p>
+            <div class="hero-left-creative">
+              <div class="hero-left-overlay"></div>
+
+              <div class="hero-left-content">
+                <span class="hero-kicker">Personalized Wellness Guidance</span>
+
+                <h1 class="hero-main-title">
+                  Calculate your daily calorie needs
+                </h1>
+
+                <p class="hero-main-text">
+                  Discover your calorie needs, understand your wellness profile,
+                  and take the first step toward a balanced vegan transition.
+                </p>
+
+                <div class="hero-action-group">
+                  <a
+                    href="#calculatorSection"
+                    class="btn btn-success btn-lg px-4"
+                  >
+                    Start Calculation
+                  </a>
+                  <a
+                    href="./recommendations.html"
+                    class="btn btn-outline-success btn-lg px-4"
+                  >
+                    Explore Recommendations
+                  </a>
+                </div>
+
+                <div class="hero-mini-chips">
+                  <span class="hero-mini-chip">Calories</span>
+                  <span class="hero-mini-chip">Nutrition</span>
+                  <span class="hero-mini-chip">Personalized Guidance</span>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="col-lg-5">
-            <div class="page-hero-card rounded-4 shadow-sm p-4 bg-white">
-              <h5 class="fw-semibold mb-3">What this helps you do</h5>
-              <ul class="list-unstyled mb-0 calculator-hero-list">
-                <li>Estimate calorie needs</li>
-                <li>Understand nutrition priorities</li>
-                <li>Prepare for personalized food suggestions</li>
-              </ul>
+            <div class="page-hero-visual rounded-4 shadow-sm p-4 bg-white">
+              <div class="hero-visual-top d-flex align-items-center gap-3 mb-4">
+                <div class="hero-visual-icon">
+                  <i class="bi bi-heart-pulse-fill"></i>
+                </div>
+                <div>
+                  <h5 class="fw-bold mb-1">
+                    Your nutrition journey starts here
+                  </h5>
+                  <p class="text-muted mb-0 small">
+                    Calculate calories, understand nutrients, and prepare for
+                    better vegan choices.
+                  </p>
+                </div>
+              </div>
+
+              <div class="hero-visual-steps">
+                <div class="hero-step-card">
+                  <span class="hero-step-icon"
+                    ><i class="bi bi-person-lines-fill"></i
+                  ></span>
+                  <div>
+                    <h6 class="mb-1">Enter Profile</h6>
+                    <p class="mb-0 small text-muted">
+                      Age, height, weight, activity, and goal
+                    </p>
+                  </div>
+                </div>
+
+                <div class="hero-step-card">
+                  <span class="hero-step-icon"
+                    ><i class="bi bi-calculator-fill"></i
+                  ></span>
+                  <div>
+                    <h6 class="mb-1">Get Calories</h6>
+                    <p class="mb-0 small text-muted">
+                      See BMR and daily calorie estimate
+                    </p>
+                  </div>
+                </div>
+
+                <div class="hero-step-card">
+                  <span class="hero-step-icon"
+                    ><i class="bi bi-flower1"></i
+                  ></span>
+                  <div>
+                    <h6 class="mb-1">See Nutrients</h6>
+                    <p class="mb-0 small text-muted">
+                      Get personalized nutrient highlights
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
     <!-- Calculator Section -->
-    <section class="py-5">
+    <section class="py-5" id="calculatorSection">
       <div class="container">
         <div class="row g-4">
           <!-- Form Card -->

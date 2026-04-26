@@ -38,9 +38,9 @@ function getFoodImage(foodName) {
   return foodImageMap[key] || "../assets/default-food.jpeg";
 }
 
-function buildFoodCard(food) {
+function buildFoodCard(food, index) {
   return `
-    <div class="col-md-6 col-lg-4 col-xl-3">
+    <div class="col-md-6 col-lg-4 col-xl-3 food-fade-in" style="animation-delay: ${index * 0.05}s;">
       <div class="food-db-card h-100">
         <img
           src="${getFoodImage(food.food_name)}"
@@ -92,7 +92,9 @@ async function loadFoods() {
       return;
     }
 
-    foodsList.innerHTML = foods.map(buildFoodCard).join("");
+    foodsList.innerHTML = foods
+      .map((food, index) => buildFoodCard(food, index))
+      .join("");
     foodsState.classList.add("d-none");
     foodsList.classList.remove("d-none");
   } catch (error) {

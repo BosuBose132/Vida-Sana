@@ -1383,6 +1383,93 @@ textarea.custom-input {
 .foods-scroll-wrap::-webkit-scrollbar-thumb:hover {
   background: #7ea66c;
 }
+/*page load transitions for vegan foods*/
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-on-load {
+    opacity: 0;
+    transform: translateY(22px);
+    animation: foodsRevealUp 0.7s ease forwards;
+  }
+
+  .reveal-delay-1 {
+    animation-delay: 0.08s;
+  }
+
+  .reveal-delay-2 {
+    animation-delay: 0.16s;
+  }
+
+  .reveal-delay-3 {
+    animation-delay: 0.24s;
+  }
+
+  .reveal-delay-4 {
+    animation-delay: 0.32s;
+  }
+
+  .reveal-delay-5 {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes foodsRevealUp {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.vs-chip,
+.vs-search-btn,
+.vs-search-input {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+}
+
+.vs-chip:hover,
+.vs-search-btn:hover {
+  transform: translateY(-1px);
+}
+
+.feature-box,
+.fact,
+.alert,
+.recommendations-state-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-4px);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .food-fade-in {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: foodCardFade 0.55s ease forwards;
+  }
+
+  @keyframes foodCardFade {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
 /*--*/
 .hero {
   position: relative;

@@ -1065,10 +1065,10 @@ textarea.custom-input {
   }
 }
 
-.card-img-top{
-  width:100%;
-  height:220px;
-  object-fit:cover;
+.card-img-top {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
 
 .card:hover .card-img-top {
@@ -1119,12 +1119,14 @@ textarea.custom-input {
 }
 
 .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .facts-section {
@@ -1140,7 +1142,6 @@ textarea.custom-input {
   text-align: center;
   letter-spacing: 1px;
 }
-
 
 /* hide scrollbar */
 .facts-scroll::-webkit-scrollbar {
@@ -1201,10 +1202,8 @@ textarea.custom-input {
   overflow-x: auto;
   padding: 15px;
 
-  
   white-space: nowrap;
 }
-
 
 .facts-wrapper {
   position: relative;
@@ -1219,8 +1218,139 @@ textarea.custom-input {
   scroll-behavior: smooth;
 }
 
+/* vegan foods page adjustmets to match homepage theme*/
+.foods-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
 
+.foods-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
 
+.food-db-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fbfdfb 100%);
+  border: 1px solid #e6efe8;
+  border-radius: 22px;
+  box-shadow: 0 10px 24px rgba(31, 111, 67, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  height: 100%;
+}
+
+.food-db-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 34px rgba(31, 111, 67, 0.12);
+  border-color: #d9eadf;
+}
+
+.food-db-card-body {
+  padding: 20px;
+}
+
+.food-db-top {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.food-db-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #eef8f1, #dff1e6);
+  color: #198754;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.food-db-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #203126;
+}
+
+.food-db-category {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #eef8f1;
+  color: #1f6f43;
+  border: 1px solid #d8ebde;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.food-db-description {
+  color: #5b685f;
+  line-height: 1.6;
+  min-height: 72px;
+}
+
+.food-db-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.food-db-meta div {
+  background: #f8fbf9;
+  border: 1px solid #e5eee8;
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.food-db-meta span {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: #748178;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.food-db-meta strong {
+  color: #203126;
+  font-weight: 800;
+}
+
+.btn-success,
+.btn-success:focus,
+.btn-success:active {
+  background-color: var(--vs-green) !important;
+  border-color: var(--vs-green) !important;
+  box-shadow: none !important;
+}
+
+.btn-success:hover {
+  background-color: var(--vs-green-dark) !important;
+  border-color: var(--vs-green-dark) !important;
+}
+
+.btn-outline-success {
+  color: var(--vs-green) !important;
+  border-color: var(--vs-green) !important;
+}
+
+.btn-outline-success:hover,
+.btn-outline-success:focus,
+.btn-outline-success:active {
+  background-color: var(--vs-green) !important;
+  border-color: var(--vs-green) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+/*--*/
 .hero {
   position: relative;
   height: 100vh;
@@ -1231,8 +1361,6 @@ textarea.custom-input {
   color: white;
   text-align: center;
 }
-
-
 
 /* Dark overlay for readability */
 .overlay {
@@ -1286,9 +1414,6 @@ textarea.custom-input {
   margin-bottom: 20px;
 }
 
-
-
-
 .facts-section {
   padding: 40px 20px;
   background: #f1f8e9;
@@ -1300,11 +1425,8 @@ textarea.custom-input {
   margin-bottom: 20px;
 }
 
-
-
-
 .facts-wrapper {
-  overflow-x: auto;     /* enables horizontal scroll */
+  overflow-x: auto; /* enables horizontal scroll */
 }
 
 .facts-scroll {
@@ -1316,12 +1438,12 @@ textarea.custom-input {
 
 /* each fact box */
 .fact {
-  min-width: 260px;     /* forces horizontal layout */
+  min-width: 260px; /* forces horizontal layout */
   flex: 0 0 auto;
   background: white;
   padding: 15px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* ✅ scrollbar ONLY for facts */
@@ -1341,7 +1463,6 @@ textarea.custom-input {
 .facts-wrapper::-webkit-scrollbar-thumb:hover {
   background: #2e7d32;
 }
-
 
 /*  This creates scroll for feature section */
 .feature-box:nth-of-type(1),

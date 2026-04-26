@@ -1242,6 +1242,7 @@ textarea.custom-input {
     transform 0.25s ease,
     box-shadow 0.25s ease,
     border-color 0.25s ease;
+  overflow: hidden;
   height: 100%;
 }
 
@@ -1251,8 +1252,15 @@ textarea.custom-input {
   border-color: #d9eadf;
 }
 
+.food-db-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
 .food-db-card-body {
-  padding: 20px;
+  padding: 18px;
 }
 
 .food-db-top {
@@ -1274,9 +1282,15 @@ textarea.custom-input {
 }
 
 .food-db-title {
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   font-weight: 800;
   color: #203126;
+}
+
+.food-db-description {
+  color: #5b685f;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .food-db-category {
@@ -1288,12 +1302,6 @@ textarea.custom-input {
   border: 1px solid #d8ebde;
   font-size: 0.75rem;
   font-weight: 700;
-}
-
-.food-db-description {
-  color: #5b685f;
-  line-height: 1.6;
-  min-height: 72px;
 }
 
 .food-db-meta {

@@ -19,10 +19,12 @@
   <body class="vs-bg">
     <!-- Navbar -->
     <nav
-      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
+      class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top vs-navbar"
     >
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="./index.html">Vida Sana</a>
+      <div class="container vs-navbar-wrap">
+        <a class="navbar-brand fw-bold vs-brand" href="./index.html"
+          >Vida Sana</a
+        >
 
         <button
           class="navbar-toggler"
@@ -35,31 +37,39 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+
+        <div class="collapse navbar-collapse vs-navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav vs-navbar-links">
             <li class="nav-item">
-              <a class="nav-link" href="./index.html">Home</a>
+              <a class="nav-link vs-nav-link" href="./index.html">Home</a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link active" href="./calculator.html">Calculator</a>
+              <a class="nav-link vs-nav-link active" href="./calculator.html">
+                Calculator
+              </a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="./recommendations.html"
-                >Recommendations</a
-              >
+              <a class="nav-link vs-nav-link" href="./recommendations.html">
+                Recommendations
+              </a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="./foods.html">Foods</a>
+              <a class="nav-link vs-nav-link" href="./foods.html">Foods</a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="./replacements.html">Replacements</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-success px-4" href="./calculator.html"
-                >Get Started</a
-              >
+              <a class="nav-link vs-nav-link" href="./replacements.html">
+                Replacements
+              </a>
             </li>
           </ul>
+
+          <div class="vs-navbar-action">
+            <a class="btn vs-btn-nav" href="#calculatorSection">Get Started</a>
+          </div>
         </div>
       </div>
     </nav>
@@ -88,12 +98,6 @@
                     class="btn btn-success btn-lg px-4"
                   >
                     Start Calculation
-                  </a>
-                  <a
-                    href="./recommendations.html"
-                    class="btn btn-outline-success btn-lg px-4"
-                  >
-                    Explore Recommendations
                   </a>
                 </div>
 

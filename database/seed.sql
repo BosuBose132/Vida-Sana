@@ -1,13 +1,4 @@
-INSERT INTO users (name, email, password)
-VALUES
-('Heremoine Granger', 'hgranger08@gmail.com', 'Heremoine#08'),
-('Lara Johnson', 'larajohnson123@gmail.com', 'larajohn@23'),
-('Harry Potter', 'harrypotter8@gmail.com', 'Potter#Hogwarts'),
-('Ron Whisley', 'ronwhisley80@gmail.com', 'spider@whisley'),
-('Severus Snape', 'severuslily02@gmail.com', 'lilypotter@2');
-
-
-INSERT INTO food_replacements (non_vegan item, vegan_alternatives, nutrient_focus, replacement_reason, usage_type, notes)
+INSERT INTO food_replacements (non_vegan_item, vegan_alternatives, nutrient_focus, replacement_reason, usage_type, notes)
 VALUES
 ('Chicken', 'tofu/tempeh', 'protein', 'Avoid Animal meat and eat plant protein', 'curry/stir/grill', 'Tofu absorbs flavours well and tempeh has a firm, meat like texture'),
 ('Beef', 'Lentils/Mushrooms/Soychunks', 'Protein/Iron', 'Replace red meat with plant-based protein', 'Burgers/Curries/Bolognese', 'Lentils and soy chunks give similar protein with less fat'),
@@ -36,45 +27,65 @@ VALUES
 ('Ghee', 'Coconut Oil / Vegan Butter', 'Healthy Fats', 'Replace animal fat', 'Cooking', 'Coconut oil gives similar richness'),
 ('Honey', 'Maple Syrup / Agave Syrup', 'Natural Sweetener', 'Avoid animal-derived sweetener', 'Drinks / Desserts', 'Maple syrup is a natural plant-based option');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-INSERT INTO food_categories(category_name) VALUES('Protein'),('Carbs'),('Healthy_Fats'),('Fiber-Rich'),('Iron-Rich');
- INSERT INTO vegan_foods
-    -> (food_name, category_id, calories, protein, carbs, fats, fiber, iron, calcium, omega_3, is_nut_free, is_soy_free, is_gluten_free, goal_tag, description)
-    -> VALUES
-    -> ('Lentils', 1, 116, 9.0, 20.0, 0.4, 8.0, 3.3, 19, 0.1, 1, 1, 1, 'muscle_gain', 'Lentils are high in protein and fiber, great for muscle building and digestion.'),
-    -> ('Chickpeas', 1, 164, 9.0, 27.0, 2.6, 8.0, 2.9, 49, 0.1, 1, 1, 1, 'muscle_gain', 'Chickpeas are rich in protein and carbs, supporting muscle growth and energy.'),
-    -> ('Tofu', 2, 76, 8.0, 2.0, 4.8, 1.9, 1.8, 350, 0.3, 1, 0, 1, 'muscle_gain', 'Tofu is a soy-based protein, low in carbs, great for muscle repair.'),
-    -> ('Tempeh', 2, 193, 19.0, 9.4, 11.0, 5.0, 2.7, 111, 0.6, 1, 0, 1, 'muscle_gain', 'Tempeh is fermented soy, high in protein and fiber for gut health.'),
-    -> ('Quinoa', 3, 120, 4.4, 21.3, 1.9, 2.8, 1.5, 17, 0.1, 1, 1, 1, 'weight_loss', 'Quinoa is a complete protein grain, great for energy and weight management.'),
-    -> ('Oats', 3, 389, 16.9, 66.3, 6.9, 10.6, 4.7, 54, 0.1, 1, 1, 1, 'weight_loss', 'Oats are high in fiber, slow-digesting carbs, perfect for weight control.'),
-    -> ('Brown Rice', 3, 216, 5.0, 44.8, 1.8, 3.5, 0.8, 10, 0.0, 1, 1, 1, 'maintenance', 'Brown rice is a whole grain, providing complex carbs and fiber for sustained energy.'),
-    -> ('Chia Seeds', 4, 486, 16.5, 42.1, 30.7, 34.4, 7.7, 631, 17.8, 1, 1, 1, 'muscle_gain', 'Chia seeds are high in omega-3, fiber, and protein, great for heart and muscle health.'),
-    -> ('Flax Seeds', 4, 534, 18.3, 28.9, 42.2, 27.3, 5.7, 255, 22.8, 1, 1, 1, 'muscle_gain', 'Flax seeds are rich in omega-3 and fiber, supporting digestion and anti-inflammation.'),
-    -> ('Almonds', 4, 575, 21.1, 21.6, 49.9, 12.5, 3.7, 264, 0.0, 0, 1, 1, 'muscle_gain', 'Almonds provide healthy fats, protein, and vitamin E for energy and heart health.'),
-    -> ('Soy Milk', 2, 54, 3.3, 6.3, 1.8, 0.6, 0.4, 123, 0.4, 1, 0, 1, 'maintenance', 'Soy milk is plant-based protein, calcium-fortified, good for bone health.'),
-    -> ('Peanut Butter', 4, 588, 25.0, 20.0, 50.0, 6.0, 0.6, 80, 0.0, 0, 1, 1, 'muscle_gain', 'Peanut butter is high in healthy fats and protein, ideal for energy and muscle growth.'),
-    -> ('Black Beans', 1, 132, 8.9, 23.7, 0.5, 8.7, 2.1, 27, 0.0, 1, 1, 1, 'weight_loss', 'Black beans are rich in protein and fiber, perfect for satiety and weight management.'),
-    -> ('Edamame', 2, 121, 11.9, 8.9, 5.2, 5.0, 2.3, 61, 0.3, 1, 0, 1, 'muscle_gain', 'Edamame is young soybeans, high in protein, fiber, and antioxidants.'),
-    -> ('Avocado', 4, 160, 2.0, 9.0, 15.0, 7.0, 0.6, 12, 0.1, 1, 1, 1, 'weight_loss', 'Avocado is rich in healthy fats and fiber, supports heart health and satiety.');
-Query OK, 15 rows affected (0.03 sec)
-Records: 15  Duplicates: 0  Warnings: 0
+INSERT INTO food_categories(category_name) VALUES('Protein'),('Carbs'),('Healthy Fats'),('Fiber Rich'),('Iron Rich');
+ INSERT INTO vegan_foods (
+  food_name,
+  category_id,
+  calories,
+  protein,
+  carbs,
+  fats,
+  fiber,
+  iron,
+  calcium,
+  omega_3,
+  serving_basis,
+  is_nut_free,
+  is_soy_free,
+  is_gluten_free,
+  goal_tag,
+  description
+)
+VALUES
+  ('Lentils', 1, 116, 9.0, 20.0, 0.4, 8.0, 3.3, 19, 0.1, '100g', TRUE, TRUE, TRUE, 'muscle_gain', 'Lentils are high in protein and fiber, great for muscle building and digestion.'),
+  ('Chickpeas', 1, 164, 9.0, 27.0, 2.6, 8.0, 2.9, 49, 0.1, '100g', TRUE, TRUE, TRUE, 'muscle_gain', 'Chickpeas are rich in protein and carbs, supporting muscle growth and energy.'),
+  ('Tofu', 1, 76, 8.0, 2.0, 4.8, 1.9, 1.8, 350, 0.3, '100g', TRUE, FALSE, TRUE, 'muscle_gain', 'Tofu is a soy-based protein, low in carbs, great for muscle repair.'),
+  ('Tempeh', 1, 193, 19.0, 9.4, 11.0, 5.0, 2.7, 111, 0.6, '100g', TRUE, FALSE, TRUE, 'muscle_gain', 'Tempeh is fermented soy, high in protein and fiber for gut health.'),
+  ('Quinoa', 2, 120, 4.4, 21.3, 1.9, 2.8, 1.5, 17, 0.1, '100g', TRUE, TRUE, TRUE, 'weight_loss', 'Quinoa is a complete protein grain, great for energy and weight management.'),
+  ('Oats', 2, 389, 16.9, 66.3, 6.9, 10.6, 4.7, 54, 0.1, '100g', TRUE, TRUE, TRUE, 'weight_loss', 'Oats are high in fiber, slow-digesting carbs, perfect for weight control.'),
+  ('Brown Rice', 2, 216, 5.0, 44.8, 1.8, 3.5, 0.8, 10, 0.0, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Brown rice is a whole grain, providing complex carbs and fiber for sustained energy.'),
+  ('Chia Seeds', 3, 486, 16.5, 42.1, 30.7, 34.4, 7.7, 631, 17.8, '100g', TRUE, TRUE, TRUE, 'general_health', 'Chia seeds are high in omega-3, fiber, and protein, great for heart and muscle health.'),
+  ('Flax Seeds', 3, 534, 18.3, 28.9, 42.2, 27.3, 5.7, 255, 22.8, '100g', TRUE, TRUE, TRUE, 'general_health', 'Flax seeds are rich in omega-3 and fiber, supporting digestion and anti-inflammation.'),
+  ('Almonds', 3, 575, 21.1, 21.6, 49.9, 12.5, 3.7, 264, 0.0, '100g', FALSE, TRUE, TRUE, 'muscle_gain', 'Almonds provide healthy fats, protein, and vitamin E for energy and heart health.'),
+  ('Soy Milk', 3, 54, 3.3, 6.3, 1.8, 0.6, 0.4, 123, 0.4, '100g', TRUE, FALSE, TRUE, 'maintenance', 'Soy milk is plant-based protein, calcium-fortified, good for bone health.'),
+  ('Peanut Butter', 3, 588, 25.0, 20.0, 50.0, 6.0, 0.6, 80, 0.0, '100g', FALSE, TRUE, TRUE, 'muscle_gain', 'Peanut butter is high in healthy fats and protein, ideal for energy and muscle growth.'),
+  ('Black Beans', 1, 132, 8.9, 23.7, 0.5, 8.7, 2.1, 27, 0.0, '100g', TRUE, TRUE, TRUE, 'weight_loss', 'Black beans are rich in protein and fiber, perfect for satiety and weight management.'),
+  ('Edamame', 1, 121, 11.9, 8.9, 5.2, 5.0, 2.3, 61, 0.3, '100g', TRUE, FALSE, TRUE, 'muscle_gain', 'Edamame is young soybeans, high in protein, fiber, and antioxidants.'),
+  ('Avocado', 3, 160, 2.0, 9.0, 15.0, 7.0, 0.6, 12, 0.1, '100g', TRUE, TRUE, TRUE, 'general_health', 'Avocado is rich in healthy fats and fiber, supports heart health and satiety.');
+INSERT INTO vegan_foods (
+  food_name,
+  category_id,
+  calories,
+  protein,
+  carbs,
+  fats,
+  fiber,
+  iron,
+  calcium,
+  omega_3,
+  serving_basis,
+  is_nut_free,
+  is_soy_free,
+  is_gluten_free,
+  goal_tag,
+  description
+)
+VALUES
+  ('Sweet Potato', 2, 86, 1.6, 20.1, 0.1, 3.0, 0.6, 30, 0.0, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Sweet potato provides steady energy, fiber, and useful vitamins for a balanced maintenance diet.'),
+  ('Quinoa Bowl Base', 2, 120, 4.4, 21.3, 1.9, 2.8, 1.5, 17, 0.1, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Quinoa is a balanced grain with protein and carbs, useful for daily energy maintenance.'),
+  ('Chickpeas Salad Mix', 1, 164, 9.0, 27.0, 2.6, 8.0, 2.9, 49, 0.1, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Chickpeas provide a balanced combination of protein, carbs, and fiber for everyday vegan meals.'),
+  ('Oat Milk', 3, 43, 1.0, 6.7, 1.3, 0.8, 0.1, 120, 0.0, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Oat milk is a soy-free plant milk option that fits a balanced vegan diet.'),
+  ('Pumpkin Seeds', 3, 559, 30.2, 10.7, 49.0, 6.0, 8.8, 46, 0.1, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Pumpkin seeds provide protein, iron, and healthy fats for balanced vegan eating.'),
+  ('Broccoli', 4, 34, 2.8, 6.6, 0.4, 2.6, 0.7, 47, 0.0, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Broccoli adds fiber, calcium, and micronutrients that support overall daily nutrition.'),
+  ('Spinach', 5, 23, 2.9, 3.6, 0.4, 2.2, 2.7, 99, 0.1, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Spinach is nutrient-dense and supports balanced vegan meals with iron and calcium.'),
+  ('Hummus', 1, 166, 7.9, 14.3, 9.6, 6.0, 2.4, 49, 0.1, '100g', TRUE, TRUE, TRUE, 'maintenance', 'Hummus gives a balanced mix of plant protein, fiber, and healthy fats for maintenance goals.');

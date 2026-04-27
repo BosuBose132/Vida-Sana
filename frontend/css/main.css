@@ -2662,3 +2662,204 @@ textarea.custom-input {
     grid-template-columns: 1fr;
   }
 }
+/*vegan foods styles*/
+/* ===== Vegan Foods Page ===== */
+.foods-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.foods-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.foods-scroll-wrap {
+  width: 100%;
+}
+
+.food-db-card {
+  overflow: hidden;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #ffffff 0%, #fbfdfb 100%);
+  border: 1px solid #e6efe8;
+  box-shadow: 0 12px 28px rgba(31, 111, 67, 0.07);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.food-db-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 38px rgba(31, 111, 67, 0.14);
+  border-color: #d4eadb;
+}
+
+.food-db-image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  background: #eef8f1;
+}
+
+.food-db-card-body {
+  padding: 18px;
+}
+
+.food-db-title {
+  font-weight: 900;
+  color: #203126;
+}
+
+.food-db-description {
+  color: #5b685f;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.food-fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: foodFadeUp 0.55s ease forwards;
+}
+
+@keyframes foodFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.facts-section {
+  padding: 55px 0;
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(180, 220, 120, 0.18),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(120, 190, 120, 0.12),
+      transparent 50%
+    ),
+    linear-gradient(to right, var(--vs-bg1), var(--vs-bg2));
+  border-top: 1px solid rgba(223, 233, 207, 0.8);
+  overflow: hidden;
+}
+
+.facts-section h2 {
+  text-align: center;
+  color: #203126;
+  margin-bottom: 24px;
+}
+
+.facts-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.facts-scroll {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  animation: factsMarquee 24s linear infinite;
+}
+
+.fact {
+  white-space: nowrap;
+  padding: 14px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(160, 190, 120, 0.35);
+  color: #355242;
+  font-weight: 800;
+  box-shadow: 0 10px 22px rgba(31, 111, 67, 0.07);
+}
+
+@keyframes factsMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.feature-box {
+  border: 1px solid #e6efe8;
+  border-radius: 18px !important;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(31, 111, 67, 0.1) !important;
+}
+
+.feature-icon {
+  width: 74px;
+  height: 74px;
+  border-radius: 18px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid #e1eee5;
+}
+
+.scrolling-text {
+  display: flex;
+  gap: 18px;
+  white-space: nowrap;
+  animation: nutritionScroll 22s linear infinite;
+}
+
+.scrolling-text span {
+  font-weight: 800;
+  color: #1f6f43;
+}
+
+@keyframes nutritionScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-45%);
+  }
+}
+
+@media (max-width: 768px) {
+  .foods-toolbar {
+    align-items: stretch;
+  }
+
+  .foods-filter-bar,
+  .vs-search {
+    width: 100%;
+  }
+
+  .food-db-image {
+    height: 170px;
+  }
+
+  .feature-box {
+    flex-direction: column;
+  }
+
+  .feature-icon {
+    width: 100%;
+    height: 150px;
+  }
+}

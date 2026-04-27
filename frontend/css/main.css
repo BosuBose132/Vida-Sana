@@ -2890,3 +2890,41 @@ textarea.custom-input {
 .foods-scroll-wrap::-webkit-scrollbar-thumb:hover {
   background: rgba(111, 159, 47, 0.65);
 }
+/* ===== Spotlight icon list polish ===== */
+.vs-spotlight-kicker i {
+  color: #198754;
+}
+
+.vs-spotlight-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-left: 0;
+}
+
+.vs-spotlight-list li::before {
+  display: none;
+}
+
+.vs-spotlight-list li i {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #e9f7ee;
+  color: #198754;
+  font-size: 0.95rem;
+  margin-top: -4px;
+}
+
+.vs-spotlight-list li span {
+  color: #4f5b52;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.vs-spotlight-copy .vs-btn-primary i {
+  font-size: 1rem;
+}

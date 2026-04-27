@@ -2,19 +2,25 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "frontend/pages/index.html" },
+    {
+      "source": "/",
+      "destination": "/frontend/pages/index.html"
+    },
     {
       "source": "/calculator",
-      "destination": "frontend/pages/calculator.html"
+      "destination": "/frontend/pages/calculator.html"
     },
     {
       "source": "/recommendations",
-      "destination": "frontend/pages/recommendations.html"
+      "destination": "/frontend/pages/recommendations.html"
     },
-    { "source": "/foods", "destination": "frontend/pages/veganFoods.html" },
+    {
+      "source": "/foods",
+      "destination": "/frontend/pages/veganFoods.html"
+    },
     {
       "source": "/replacements",
-      "destination": "frontend/pages/replacements.html"
+      "destination": "/frontend/pages/replacements.html"
     }
   ]
 }

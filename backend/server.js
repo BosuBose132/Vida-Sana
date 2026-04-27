@@ -6,7 +6,7 @@ const calorieRoutes = require("./src/routes/calorieRoutes");
 const recommendationRoutes = require("./src/routes/recommendationRoutes");
 const foodRoutes = require("./src/routes/foodRoutes");
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());

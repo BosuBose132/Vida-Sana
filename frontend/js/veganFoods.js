@@ -1,3 +1,9 @@
+const API_BASE_URL =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1"
+    ? "http://localhost:3000"
+    : "https://vida-sana-production.up.railway.app";
+
 const foodsList = document.getElementById("foodsList");
 const foodsState = document.getElementById("foodsState");
 const foodsFilterBar = document.getElementById("foodsFilterBar");
@@ -75,7 +81,7 @@ async function loadFoods() {
     if (currentFoodsSearch) params.append("search", currentFoodsSearch);
 
     const response = await fetch(
-      `http://localhost:3000/api/foods?${params.toString()}`,
+      `${API_BASE_URL}/api/foods?${params.toString()}`,
     );
     const result = await response.json();
 

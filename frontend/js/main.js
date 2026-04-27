@@ -1,3 +1,9 @@
+const API_BASE_URL =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1"
+    ? "http://localhost:3000"
+    : "https://vida-sana-production.up.railway.app";
+
 const calculatorForm = document.getElementById("calculatorForm");
 const nutrientsList = document.getElementById("nutrientsList");
 
@@ -28,19 +34,16 @@ async function loadPersonalizedNutrients(goal, allergies) {
     '<div class="text-muted small">Loading personalized nutrient guidance...</div>';
 
   try {
-    const response = await fetch(
-      "http://localhost:3000/api/nutrients/recommend",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          goal,
-          allergies,
-        }),
+    const response = await fetch(`${API_BASE_URL}/api/nutrients/recommend`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-    );
+      body: JSON.stringify({
+        goal,
+        allergies,
+      }),
+    });
 
     const result = await response.json();
 
@@ -100,24 +103,21 @@ if (calculatorForm) {
       calorieMessage.textContent =
         "Please wait while we calculate your daily calorie needs.";
 
-      const response = await fetch(
-        "http://localhost:3000/api/calories/calculate",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            age,
-            gender,
-            height,
-            weight,
-            activity,
-            goal,
-            allergies,
-          }),
+      const response = await fetch(`${API_BASE_URL}/api/calories/calculate`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify({
+          age,
+          gender,
+          height,
+          weight,
+          activity,
+          goal,
+          allergies,
+        }),
+      });
 
       const result = await response.json();
 
@@ -163,7 +163,7 @@ async function loadNutrientsToWatch() {
   }
 
   try {
-    const response = await fetch("http://localhost:3000/api/nutrients");
+    const response = await fetch(`${API_BASE_URL}/api/nutrients`);
     const result = await response.json();
 
     if (!response.ok) {
@@ -306,7 +306,7 @@ async function loadRecommendationsPage() {
     recommendationsState.innerHTML =
       '<p class="text-muted mb-0">Loading personalized recommendations from the database...</p>';
 
-    const response = await fetch("http://localhost:3000/api/recommendations", {
+    const response = await fetch(`${API_BASE_URL}/api/recommendations`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

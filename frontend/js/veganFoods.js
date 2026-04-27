@@ -14,34 +14,34 @@ let currentFoodsCategory = "";
 let currentFoodsSearch = "";
 
 const foodImageMap = {
-  tofu: "../assets/tofu.jpeg",
-  lentils: "../assets/lentils.jpeg",
-  chickpeas: "../assets/chickpeas.jpeg",
-  quinoa: "../assets/Quinoa.jpeg",
-  almonds: "../assets/Almonds.jpeg",
-  "chia seeds": "../assets/chiaseeds.jpeg",
-  spinach: "../assets/spinach.jpeg",
-  oats: "../assets/oats.jpeg",
-  "brown rice": "../assets/brown-rice.jpeg",
-  broccoli: "../assets/broccoli.jpeg",
-  "peanut butter": "../assets/peanut-butter.jpeg",
-  "soy milk": "../assets/soy-milk.jpeg",
-  "sweet potato": "../assets/sweet-potato.jpeg",
-  "black beans": "../assets/black-beans.jpeg",
-  avocado: "../assets/avocado.jpeg",
-  "pumpkin seeds": "../assets/pumpkin-seeds.jpeg",
-  hummus: "../assets/hummus.jpeg",
-  "oat milk": "../assets/oat-milk.jpeg",
-  "chickpeas salad mix": "../assets/chickpea-salad-mix.jpeg",
-  edamame: "../assets/edamame.jpeg",
-  "flax seeds": "../assets/flax-seeds.jpeg",
-  "quinoa bowl base": "../assets/quinoa-bowl.jpeg",
-  tempeh: "../assets/tempeh.jpeg",
+  tofu: "./frontend/assets/tofu.jpeg",
+  lentils: "./frontend/assets/lentils.jpeg",
+  chickpeas: "./frontend/assets/chickpeas.jpeg",
+  quinoa: "./frontend/assets/Quinoa.jpeg",
+  almonds: "./frontend/assets/Almonds.jpeg",
+  "chia seeds": "./frontend/assets/chiaseeds.jpeg",
+  spinach: "./frontend/assets/spinach.jpeg",
+  oats: "./frontend/assets/oats.jpeg",
+  "brown rice": "./frontend/assets/brown-rice.jpeg",
+  broccoli: "./frontend/assets/broccoli.jpeg",
+  "peanut butter": "./frontend/assets/peanut-butter.jpeg",
+  "soy milk": "./frontend/assets/soy-milk.jpeg",
+  "sweet potato": "./frontend/assets/sweet-potato.jpeg",
+  "black beans": "./frontend/assets/black-beans.jpeg",
+  avocado: "./frontend/assets/avocado.jpeg",
+  "pumpkin seeds": "./frontend/assets/pumpkin-seeds.jpeg",
+  hummus: "./frontend/assets/hummus.jpeg",
+  "oat milk": "./frontend/assets/oat-milk.jpeg",
+  "chickpeas salad mix": "./frontend/assets/chickpea-salad-mix.jpeg",
+  edamame: "./frontend/assets/edamame.jpeg",
+  "flax seeds": "./frontend/assets/flax-seeds.jpeg",
+  "quinoa bowl base": "./frontend/assets/quinoa-bowl.jpeg",
+  tempeh: "./frontend/assets/tempeh.jpeg",
 };
 
 function getFoodImage(foodName) {
   const key = foodName.trim().toLowerCase();
-  return foodImageMap[key] || "../assets/default-food.jpeg";
+  return foodImageMap[key] || "./frontend/assets/default-food.jpeg";
 }
 
 function buildFoodCard(food, index) {

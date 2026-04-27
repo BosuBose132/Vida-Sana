@@ -2863,3 +2863,30 @@ textarea.custom-input {
     height: 150px;
   }
 }
+/* ===== Vegan Foods: show 2 rows, scroll rest ===== */
+.foods-scroll-wrap {
+  max-height: 620px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 6px 10px 18px 4px;
+  border-radius: 24px;
+}
+
+/* nicer scrollbar */
+.foods-scroll-wrap::-webkit-scrollbar {
+  width: 10px;
+}
+
+.foods-scroll-wrap::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+}
+
+.foods-scroll-wrap::-webkit-scrollbar-thumb {
+  background: rgba(111, 159, 47, 0.45);
+  border-radius: 999px;
+}
+
+.foods-scroll-wrap::-webkit-scrollbar-thumb:hover {
+  background: rgba(111, 159, 47, 0.65);
+}

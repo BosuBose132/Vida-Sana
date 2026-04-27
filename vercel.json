@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/pages/index.html" },
+    { "source": "/", "destination": "/index.html" },
     { "source": "/calculator", "destination": "/pages/calculator.html" },
     {
       "source": "/recommendations",

@@ -2343,3 +2343,322 @@ textarea.custom-input {
     padding: 38px 20px;
   }
 }
+/* ===== Recommendations Page ===== */
+.recommendations-hero-section {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(180, 220, 120, 0.22),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(120, 190, 120, 0.14),
+      transparent 45%
+    ),
+    linear-gradient(to right, #f4fbf6, #ffffff);
+  padding: 82px 0 58px;
+  border-bottom: 1px solid #e6efe8;
+}
+
+.recommendations-hero-copy {
+  max-width: 680px;
+}
+
+.recommendations-kicker {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #198754;
+  margin-bottom: 14px;
+}
+
+.recommendations-hero-title {
+  font-size: clamp(2.35rem, 4vw, 4rem);
+  line-height: 1.08;
+  font-weight: 900;
+  color: #1f2d25;
+  margin-bottom: 18px;
+}
+
+.recommendations-hero-text {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: #56645b;
+  max-width: 620px;
+  margin-bottom: 24px;
+}
+
+.recommendations-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.recommendations-hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.recommendations-chip {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid #dbe8dd;
+  color: #355242;
+  font-size: 0.86rem;
+  font-weight: 700;
+  backdrop-filter: blur(6px);
+}
+
+.recommendations-hero-visual {
+  border: 1px solid #e6efe8;
+}
+
+.recommendations-visual-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.recommendations-visual-icon,
+.recommendations-step-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #eef8f1, #dff1e6);
+  color: #198754;
+}
+
+.recommendations-visual-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  font-size: 1.35rem;
+}
+
+.recommendations-visual-steps {
+  display: grid;
+  gap: 14px;
+}
+
+.recommendations-step-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: #fbfdfb;
+  border: 1px solid #e7efe9;
+}
+
+.recommendations-step-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+.profile-summary-card,
+.recommendation-note-card,
+.recommendations-header-card,
+.recommendations-state-card {
+  border: 1px solid #edf1ed;
+}
+
+.profile-metric-list {
+  display: grid;
+  gap: 12px;
+}
+
+.profile-metric-item {
+  padding: 14px;
+  border-radius: 16px;
+  background: #f8fcf9;
+  border: 1px solid #e1eee5;
+}
+
+.profile-metric-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #6a766f;
+}
+
+.profile-metric-value {
+  font-weight: 900;
+  color: #203126;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+/* ===== Recommendation Food Cards with Hover Nutrition ===== */
+.recommendation-food-card {
+  position: relative;
+  min-height: 270px;
+  overflow: hidden;
+  border-radius: 22px;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffffff 0%, #fbfdfb 100%);
+  border: 1px solid #e6efe8;
+  box-shadow: 0 12px 28px rgba(31, 111, 67, 0.07);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.recommendation-food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 38px rgba(31, 111, 67, 0.14);
+  border-color: #d4eadb;
+}
+
+.compact-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.compact-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #eef8f1, #dff1e6);
+  color: #198754;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.compact-card-title {
+  font-size: 1.12rem;
+  font-weight: 900;
+  color: #203126;
+}
+
+.compact-card-category {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #198754;
+  background: #e9f7ee;
+  border: 1px solid #dbeee1;
+  padding: 5px 10px;
+  border-radius: 999px;
+}
+
+.compact-card-description {
+  color: #5b685f;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.compact-card-hover-hint {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  color: #2f6f2f;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.compact-hover-panel {
+  position: absolute;
+  inset: 0;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  transform: translateY(100%);
+  transition: transform 0.28s ease;
+  overflow-y: auto;
+}
+
+.compact-hover-card:hover .compact-hover-panel {
+  transform: translateY(0);
+}
+
+.compact-hover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.compact-hover-header h6 {
+  font-weight: 900;
+  color: #203126;
+}
+
+.compact-hover-subtitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #198754;
+  white-space: nowrap;
+}
+
+.nutrition-progress-list {
+  display: grid;
+  gap: 10px;
+}
+
+.nutrition-progress-row {
+  display: grid;
+  gap: 5px;
+}
+
+.nutrition-progress-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.nutrition-progress-label {
+  color: #4f5b52;
+}
+
+.nutrition-progress-value {
+  color: #203126;
+}
+
+.nutrition-progress-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #e8f1ea;
+  overflow: hidden;
+}
+
+.nutrition-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(to right, #6f9f2f, #2d9b66);
+}
+
+@media (max-width: 991.98px) {
+  .recommendations-hero-section {
+    padding: 62px 0 42px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .recommendations-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+}

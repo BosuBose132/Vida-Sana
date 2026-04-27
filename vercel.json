@@ -1,13 +1,14 @@
 {
-  "experimentalServices": {
-    "frontend": {
-      "entrypoint": "frontend",
-      "routePrefix": "/",
-      "static": true
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/pages/index.html" },
+    { "source": "/calculator", "destination": "/pages/calculator.html" },
+    {
+      "source": "/recommendations",
+      "destination": "/pages/recommendations.html"
     },
-    "backend": {
-      "entrypoint": "backend",
-      "routePrefix": "/_/backend"
-    }
-  }
+    { "source": "/foods", "destination": "/pages/veganFoods.html" },
+    { "source": "/replacements", "destination": "/pages/replacements.html" }
+  ]
 }

@@ -16,13 +16,16 @@
     <link rel="stylesheet" href="../css/main.css" />
   </head>
 
-  <body>
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
-    >
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="./index.html">Vida Sana</a>
+  <body class="vs-bg">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg vs-navbar sticky-top">
+      <div class="container vs-navbar-wrap">
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold vs-brand" href="./index.html"
+          >Vida Sana</a
+        >
 
+        <!-- Toggle Button (Mobile) -->
         <button
           class="navbar-toggler"
           type="button"
@@ -35,29 +38,40 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+        <!-- Nav Links -->
+        <div class="collapse navbar-collapse vs-navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center vs-navbar-links">
             <li class="nav-item">
-              <a class="nav-link" href="./index.html">Home</a>
+              <a class="nav-link vs-nav-link" href="./index.html">Home</a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="./calculator.html">Calculator</a>
+              <a class="nav-link vs-nav-link" href="./calculator.html"
+                >Calculator</a
+              >
             </li>
+
             <li class="nav-item">
-              <a class="nav-link active" href="./recommendations.html"
+              <a
+                class="nav-link vs-nav-link active"
+                href="./recommendations.html"
                 >Recommendations</a
               >
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="./foods.html">Foods</a>
+              <a class="nav-link vs-nav-link" href="./foods.html">Foods</a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="./replacements.html">Replacements</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-success px-4" href="./calculator.html"
-                >Recalculate</a
+              <a class="nav-link vs-nav-link" href="./replacements.html"
+                >Replacements</a
               >
+            </li>
+
+            <!-- Button -->
+            <li class="nav-item ms-lg-3 vs-navbar-action">
+              <a class="btn vs-btn-nav" href="./calculator.html">Recalculate</a>
             </li>
           </ul>
         </div>
@@ -67,32 +81,92 @@
     <section class="recommendations-hero-section">
       <div class="container">
         <div class="row align-items-center g-4">
-          <div class="col-lg-7">
-            <span
-              class="badge rounded-pill text-bg-success-subtle text-success mb-3 px-3 py-2"
-            >
-              Personalized Vegan Food Guidance
-            </span>
-            <h1 class="display-6 fw-bold mb-3">
-              Recommendations tailored to your nutrition goals
-            </h1>
-            <p class="lead text-muted mb-0">
-              Explore vegan food suggestions filtered by your calorie target,
-              goal, and food restrictions. Nutrition values are shown per 100g
-              for easier comparison.
-            </p>
+          <div class="col-lg-7 reveal-on-load reveal-delay-1">
+            <div class="recommendations-hero-copy">
+              <span class="recommendations-kicker">
+                Personalized Vegan Food Guidance
+              </span>
+
+              <h1 class="recommendations-hero-title">
+                Smart recommendations for your vegan nutrition journey
+              </h1>
+
+              <p class="recommendations-hero-text">
+                Explore foods matched to your goal, calorie target, and
+                restrictions. Hover on each item to quickly understand its
+                nutrition profile.
+              </p>
+
+              <div class="recommendations-hero-actions">
+                <a href="#recommendationsList" class="btn vs-btn-primary">
+                  View Recommendations
+                </a>
+                <a href="./calculator.html" class="btn vs-btn-secondary">
+                  Update Profile
+                </a>
+              </div>
+
+              <div class="recommendations-hero-chips">
+                <span class="recommendations-chip">Goal-based</span>
+                <span class="recommendations-chip">Allergy-aware</span>
+                <span class="recommendations-chip">Easy comparison</span>
+              </div>
+            </div>
           </div>
 
-          <div class="col-lg-5">
+          <div class="col-lg-5 reveal-on-load reveal-delay-2">
             <div
-              class="recommendations-hero-card bg-white rounded-4 shadow-sm p-4"
+              class="recommendations-hero-visual bg-white rounded-4 shadow-sm p-4"
             >
-              <h5 class="fw-semibold mb-3">What this page helps you do</h5>
-              <ul class="list-unstyled recommendation-hero-list mb-0">
-                <li>Review foods matched to your current goal</li>
-                <li>Compare nutrition per 100g clearly</li>
-                <li>Understand why each food was recommended</li>
-              </ul>
+              <div class="recommendations-visual-top">
+                <div class="recommendations-visual-icon">
+                  <i class="bi bi-clipboard2-pulse"></i>
+                </div>
+                <div>
+                  <h5 class="fw-bold mb-1">How this page helps</h5>
+                  <p class="text-muted small mb-0">
+                    Designed to make your food selection faster and clearer.
+                  </p>
+                </div>
+              </div>
+
+              <div class="recommendations-visual-steps">
+                <div class="recommendations-step-card">
+                  <span class="recommendations-step-icon">
+                    <i class="bi bi-bullseye"></i>
+                  </span>
+                  <div>
+                    <h6 class="mb-1">Match Your Goal</h6>
+                    <p class="mb-0 small text-muted">
+                      Foods are filtered by your selected nutrition goal.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="recommendations-step-card">
+                  <span class="recommendations-step-icon">
+                    <i class="bi bi-shield-check"></i>
+                  </span>
+                  <div>
+                    <h6 class="mb-1">Respect Restrictions</h6>
+                    <p class="mb-0 small text-muted">
+                      Suggestions adapt to soy, nut, or gluten concerns.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="recommendations-step-card">
+                  <span class="recommendations-step-icon">
+                    <i class="bi bi-bar-chart-line"></i>
+                  </span>
+                  <div>
+                    <h6 class="mb-1">Compare Nutrition</h6>
+                    <p class="mb-0 small text-muted">
+                      Hover to view nutrient values in a clean visual format.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -12,603 +12,446 @@
     <link rel="stylesheet" href="../css/main.css" />
   </head>
 </html>
-<body>
+<body class="vs-home-page">
   <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top vs-navbar">
-  <div class="container vs-navbar-wrap">
+  <nav
+    class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top vs-navbar"
+  >
+    <div class="container vs-navbar-wrap">
+      <a class="navbar-brand fw-bold vs-brand" href="./index.html">Vida Sana</a>
 
-    <!-- Logo -->
-    <a class="navbar-brand fw-bold vs-brand" href="index.html">Vida Sana</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- Toggle Button (Mobile) -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <div class="collapse navbar-collapse vs-navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav vs-navbar-links">
+          <li class="nav-item">
+            <a class="nav-link vs-nav-link active" href="./index.html">Home</a>
+          </li>
 
-    <!-- Nav Links -->
-    <div class="collapse navbar-collapse vs-navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav vs-navbar-links">
+          <li class="nav-item">
+            <a class="nav-link vs-nav-link" href="./calculator.html"
+              >Calculator</a
+            >
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link custom vs-nav-link active" href="#">Home</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link vs-nav-link" href="./recommendations.html">
+              Recommendations
+            </a>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link custom-nav-link" href="#">Calculator</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link vs-nav-link" href="./veganFoods.html">Foods</a>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link custom-nav-link" href="#">Recommendations</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link vs-nav-link" href="./replacements.html">
+              Replacements
+            </a>
+          </li>
+        </ul>
 
-        <li class="nav-item">
-          <a class="nav-link custom-nav-link" href="#">Foods</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link custom-nav-link" href="replacements.html">
-            Replacements
-          </a>
-        </li>
-
-        <!-- Button -->
-        <li class="nav-item vs-navbar-action">
-          <a class="btn vs-btn-nav" href="#">Get Started</a>
-        </li>
-
-      </ul>
+        <div class="vs-navbar-action">
+          <a class="btn vs-btn-nav" href="#homeFeatures">Get Started</a>
+        </div>
+      </div>
     </div>
-  </div>
-</nav>
-  <!-- Hero Section -->
-  <section class="vs-hero d-flex align-items-center">
+  </nav>
+  <!-- Hero -->
+  <section class="vs-home-hero">
     <div class="container">
-      <div class="row align-items-center gy-5">
-        <div class="col-lg-6">
-          <p class="vs-hero-eyebrow mb-2">
-            Compassion in <span>Every Meal</span>
-          </p>
-          <h1 class="vs-hero-title mb-3">Your guide to a healthier vegan transition</h1>
-          <p class="vs-hero-subtitle mb-4">
-            Vida Sana helps you understand calorie needs, key nutrients to
-            watch, plant-based food options, and healthier vegan replacements —
-            all in one place.
-          </p>
-          <div class="d-flex flex-wrap gap-3">
-            <a href="#" class="btn vs-btn-primary">Start Your Journey</a>
-            <a href="#" class="btn vs-btn-secondary">Explore Foods</a>
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6 reveal-on-load reveal-delay-1">
+          <div class="vs-home-hero-copy">
+            <span class="vs-home-kicker">Healthy Vegan Living</span>
+
+            <h1 class="vs-home-title">
+              Your complete guide to a smarter vegan transition
+            </h1>
+
+            <p class="vs-home-subtitle">
+              Vida Sana helps you estimate calories, understand nutrients,
+              discover vegan foods, and explore plant-based replacements, all in
+              one clean and beginner-friendly experience.
+            </p>
+
+            <div class="vs-home-actions">
+              <a href="./calculator.html" class="btn vs-btn-primary">
+                Start with Calculator
+              </a>
+              <a href="#homeFeatures" class="btn vs-btn-secondary">
+                Explore Features
+              </a>
+            </div>
+
+            <div class="vs-home-chips">
+              <span class="vs-home-chip">Calorie Guidance</span>
+              <span class="vs-home-chip">Nutrition Awareness</span>
+              <span class="vs-home-chip">Plant-Based Discovery</span>
+            </div>
           </div>
         </div>
 
-        <div class="col-lg-6">
-          <div class="hero-image-placeholder rounded-4 shadow-sm position-relative overflow-hidden">
-  <img
-    src="../assets/Compassion.jpg"
-    alt="Healthy vegan food"
-    class="img-fluid rounded-4 hero-image"
-  />
+        <div class="col-lg-6 reveal-on-load reveal-delay-2">
+          <div class="vs-home-hero-visual">
+            <img
+              src="../assets/Compassion.jpg"
+              alt="Healthy vegan lifestyle"
+              class="vs-home-hero-image"
+            />
 
-  <!-- ✅ Overlay pills -->
-  <div class="vs-hero-pills" aria-hidden="true">
-    <div class="vs-pill vs-pill-green">
-      <span class="vs-pill-icon">🍃</span>
-      <span class="vs-pill-text">B12 Guidance</span>
-    </div>
+            <!-- <div class="vs-home-overlay-card">
+              <div class="vs-home-overlay-item">
+                <span class="vs-home-overlay-label">Calculator</span>
+                <strong>Daily calorie guidance</strong>
+              </div>
 
-    <div class="vs-pill vs-pill-yellow">
-      <span class="vs-pill-icon">🍲</span>
-      <span class="vs-pill-text">Food Swaps</span>
-    </div>
+              <div class="vs-home-overlay-item">
+                <span class="vs-home-overlay-label">Recommendations</span>
+                <strong>Goal-based vegan foods</strong>
+              </div>
 
-    <div class="vs-pill vs-pill-purple">
-      <span class="vs-pill-icon">🌱</span>
-      <span class="vs-pill-text">Beginner Friendly</span>
-    </div>
-  </div>
-</div>
-        </div>
-      </div>
-      <!-- STATS BAR (Sample-1 exact style) -->
-<div class="vs-stats-wrap">
-  <div class="vs-stats-card">
-    <div class="vs-stat">
-      <div class="vs-stat-top">
-        <span class="vs-stat-number vs-stat-green">7</span>
-        <span class="vs-stat-emoji" aria-hidden="true">🍃</span>
-      </div>
-      <div class="vs-stat-label">Key Nutrients Tracked</div>
-    </div>
-
-    <div class="vs-stat-divider" aria-hidden="true"></div>
-
-    <div class="vs-stat">
-      <div class="vs-stat-top">
-        <span class="vs-stat-number vs-stat-orange">150+</span>
-      </div>
-      <div class="vs-stat-label">Plant-Based Swaps</div>
-    </div>
-
-    <div class="vs-stat-divider" aria-hidden="true"></div>
-
-    <div class="vs-stat">
-      <div class="vs-stat-top">
-        <span class="vs-stat-number vs-stat-purple">10,000+</span>
-      </div>
-      <div class="vs-stat-label">Beginner-Friendly Tips</div>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== START: DASHBOARD ROW WRAPPER (ADD THIS ABOVE Document-2) ===== -->
-<section class="vs-dash">
-  <div class="vs-main-inner">
-   <div class="row g-4 align-items-stretch">
-
-      <!-- ===== Document-2 (YOUR EXISTING SECTIONS) - LEFT ===== -->
-      <div class="col-lg-8">
-        <!-- 🔻 PASTE/KEEP your existing Document-2 sections here (NO CHANGES) -->
-        <!-- New Section: Helpful Resources -->
-<section class="vs-info-cards">
-  <div class="vs-main-inner">
-    <div class="text-center mb-4">
-      <h2 class="fw-bold vs-section-title">Helpful Resources</h2>
-      <p class="text-muted mx-auto vs-section-subtitle">
-        Use search, tips, and simple reminders to make your vegan transition easier and healthier.
-      </p>
-    </div>
-
-    <div class="row g-4">
-      <!-- Card 1 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="vs-info-card h-100">
-          <div class="vs-info-icon" aria-hidden="true">
-            <span class="vs-info-emoji">🔎</span>
+              <div class="vs-home-overlay-item">
+                <span class="vs-home-overlay-label">Replacements</span>
+                <strong>Simple plant-based swaps</strong>
+              </div>
+            </div> -->
           </div>
-          <h5 class="vs-info-title">Search &amp; Filters</h5>
-          <p class="vs-info-text">
-            Search foods and filter by category (dairy, protein, baking, sweeteners).
-          </p>
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="vs-info-card h-100">
-          <div class="vs-info-icon" aria-hidden="true">
-            <span class="vs-info-emoji">💡</span>
-          </div>
-          <h5 class="vs-info-title">Beginner Tips</h5>
-          <p class="vs-info-text">
-            Practical tips for labels, fortified foods, allergies, and starting simple.
-          </p>
+      <div class="vs-home-stats reveal-on-load reveal-delay-3">
+        <div class="vs-home-stat-card">
+          <div class="vs-home-stat-number">4</div>
+          <div class="vs-home-stat-label">Core Features</div>
         </div>
-      </div>
 
-      <!-- Card 3 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="vs-info-card h-100">
-          <div class="vs-info-icon" aria-hidden="true">
-            <span class="vs-info-emoji">🧠</span>
-          </div>
-          <h5 class="vs-info-title">Healthy Balance Reminders</h5>
-          <p class="vs-info-text">
-            Gentle reminders like B12, protein balance, and mindful choices (not medical).
-          </p>
+        <div class="vs-home-stat-card">
+          <div class="vs-home-stat-number">8</div>
+          <div class="vs-home-stat-label">Key Nutrients Highlighted</div>
+        </div>
+
+        <div class="vs-home-stat-card">
+          <div class="vs-home-stat-number">100+</div>
+          <div class="vs-home-stat-label">Plant-Based Food Options</div>
+        </div>
+
+        <div class="vs-home-stat-card">
+          <div class="vs-home-stat-number">Easy</div>
+          <div class="vs-home-stat-label">Beginner-Friendly Guidance</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- Why Vida Sana -->
-  <section class="py-5 vs-replacements">
-    <div class="vs-main-inner">
-      <div class="text-center mb-5">
-        <h2 class="fw-bold">Why Vida Sana?</h2>
-        <p class="text-muted mx-auto section-text">
-          Transitioning to a vegan diet can feel overwhelming. Vida Sana makes
-          it easier by helping users understand nutrition, calorie needs, and
-          plant-based alternatives.
+  <!-- Intro -->
+  <section
+    class="vs-section-block reveal-on-load reveal-delay-2"
+    id="homeFeatures"
+  >
+    <div class="container">
+      <div class="vs-section-heading text-center">
+        <span class="vs-section-kicker">What Vida Sana Offers</span>
+        <h2 class="vs-section-title">
+          Everything you need for a healthier vegan journey
+        </h2>
+        <p class="vs-section-text">
+          Explore the core parts of the project through focused tools that help
+          users plan, learn, and make better plant-based choices.
         </p>
       </div>
 
       <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
-          <div class="feature-card h-100 p-4 rounded-4 shadow-sm">
-            <h5 class="fw-semibold">Calorie Guidance</h5>
-            <p class="text-muted mb-0">
-              Estimate daily calorie needs based on personal details and goals.
+        <div class="col-md-6 col-xl-3">
+          <div class="vs-feature-summary-card h-100">
+            <div class="vs-feature-summary-icon">
+              <i class="bi bi-calculator"></i>
+            </div>
+            <h5>Calculator</h5>
+            <p>
+              Estimate calories based on personal details, activity level, and
+              wellness goals.
             </p>
-            <div class="vs-thumb" aria-hidden="true">
-                <span class="vs-thumb-emoji">⚖️</span>
-            </div>
-            <div class="vs-thumb vs-thumb-home" aria-hidden="true">
-              <img src="../assets/thumbs/thumb-calorie.png" alt="" class="vs-thumb-img vs-thumb-img--contain" />
-            </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-3">
-          <div class="feature-card h-100 p-4 rounded-4 shadow-sm">
-            <h5 class="fw-semibold">Nutrients to Watch</h5>
-            <p class="text-muted mb-0">
-              Learn about important nutrients like B12, iron, calcium, &
-              omega-3.
-            </p>
-            <div class="vs-thumb" aria-hidden="true">
-                <span class="vs-thumb-emoji">💊</span>
+        <div class="col-md-6 col-xl-3">
+          <div class="vs-feature-summary-card h-100">
+            <div class="vs-feature-summary-icon">
+              <i class="bi bi-clipboard2-pulse"></i>
             </div>
-            <div class="vs-thumb vs-thumb-home" aria-hidden="true">
-              <img src="../assets/thumbs/thumb-calorie.png" alt="" class="vs-thumb-img vs-thumb-img--contain" />
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="feature-card h-100 p-4 rounded-4 shadow-sm">
-            <h5 class="fw-semibold">Food Suggestions</h5>
-            <p class="text-muted mb-0">
-              Discover vegan food options that match your nutritional needs.
-            </p>
-            <div class="vs-thumb" aria-hidden="true">
-                <span class="vs-thumb-emoji">🥗</span>
-            </div>
-            <div class="vs-thumb vs-thumb-home" aria-hidden="true">
-              <img src="../assets/thumbs/thumb-calorie.png" alt="" class="vs-thumb-img vs-thumb-img--contain" />
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="feature-card h-100 p-4 rounded-4 shadow-sm">
-            <h5 class="fw-semibold">Easy Replacements</h5>
-            <p class="text-muted mb-0">
-              Find plant-based alternatives for common non-vegan foods.
-            </p>
-            <div class="vs-thumb" aria-hidden="true">
-                <span class="vs-thumb-emoji">🔁</span>
-            </div>
-            <div class="vs-thumb vs-thumb-home" aria-hidden="true">
-              <img src="../assets/thumbs/thumb-calorie.png" alt="" class="vs-thumb-img vs-thumb-img--contain" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Nutrients Section -->
-  <section class="py-5 vs-replacements">
-    <div class="vs-main-inner">
-      <div class="row align-items-center gy-4">
-        <div class="col-lg-6">
-  <h2 class="fw-bold mb-3">Nutrients to Watch During Vegan Transition</h2>
-
-  <p class="text-muted mb-4">
-    Many beginners are unaware of nutrients that need careful planning when moving to a vegan diet.
-    Vida Sana highlights important nutrients and shows plant-based sources to help users make informed choices.
-  </p>
-
-  <div class="vs-nutrient-grid">
-    <div class="vs-nutrient-card">
-      <div class="vs-nutrient-head"><span class="vs-check" aria-hidden="true">🧬</span>Vitamin B12</strong></div>
-      <div class="vs-nutrient-sub">Nutritional yeast, fortified plant milks, fortified cereals.</div>
-    </div>
-
-    <div class="vs-nutrient-card">
-      <div class="vs-nutrient-head"><span class="vs-check" aria-hidden="true">🩸</span>Iron</strong></div>
-      <div class="vs-nutrient-sub">Spinach, lentils, quinoa.</div>
-    </div>
-
-    <div class="vs-nutrient-card">
-      <div class="vs-nutrient-head"><span class="vs-check" aria-hidden="true">🦴</span>Calcium</strong></div>
-      <div class="vs-nutrient-sub">Fortified plant milks, tofu, tahini, broccoli.</div>
-    </div>
-
-    <div class="vs-nutrient-card">
-      <div class="vs-nutrient-head"><span class="vs-check" aria-hidden="true">☀️</span>Vitamin D</strong></div>
-      <div class="vs-nutrient-sub">Fortified plant milks, tofu, mushrooms (UV), sunlight.</div>
-    </div>
-
-    <div class="vs-nutrient-card">
-      <div class="vs-nutrient-head"><span class="vs-check" aria-hidden="true">🐟</span>Omega-3</strong></div>
-      <div class="vs-nutrient-sub">Flaxseeds, chia seeds, walnuts, algae oil.</div>
-    </div>
-
-    <div class="vs-nutrient-card">
-      <div class="vs-nutrient-head"><span class="vs-check" aria-hidden="true">🧂</span>Iodine</strong></div>
-      <div class="vs-nutrient-sub">Seaweed, iodized salt.</div>
-    </div>
-
-    <div class="vs-nutrient-card">
-      <div class="vs-nutrient-head"><span class="vs-check" aria-hidden="true">💪</span>Protein</strong></div>
-      <div class="vs-nutrient-sub">Beans, lentils, tofu, tempeh, seitan.</div>
-    </div>
-
-    <div class="vs-nutrient-card">
-      <div class="vs-nutrient-head"><span class="vs-check" aria-hidden="true">🌰</span>Selenium</strong></div>
-      <div class="vs-nutrient-sub">Brazil nuts, sunflower seeds, brown rice.</div>
-    </div>
-  </div>
-</div>
-        <div class="col-lg-6">
-          <div class="info-box vs-note-box rounded-4 shadow-sm p-4">
-  <div class="vs-note-head">
-    <span class="vs-note-icon" aria-hidden="true">⚠️</span>
-    <h5 class="fw-semibold mb-0">Important Note</h5>
-  </div>
-
-  <p class="text-muted mb-0 mt-3">
-    Vida Sana provides educational nutrition guidance and is not a substitute for medical advice, diagnosis, or treatment.
-  </p>
-</div>
-        </div>
-      </div>
-    </div>
-  </section>
-      </div>
-
-      <!-- ===== Document-1 Sidebar - RIGHT (PASTE THIS) ===== -->
-      <aside class="col-lg-4">
-        <div class="vs-sidepanel">
-
-          <div class="vs-sidepanel-top">
-            <div class="vs-sidepanel-title">
-              <span class="vs-sidepanel-leaf">🌿</span>
-              <span>Plant-Based Foods</span>
-              <span class="vs-sidepanel-count">11</span>
-            </div>
-
-            <div class="vs-sidepanel-pill">
-              <span class="vs-sidepanel-pill-icon">🌱</span>
-              <span>Vegan Replacements</span>
-              <span class="vs-sidepanel-pill-arrow">›</span>
-            </div>
-          </div>
-
-          <div class="vs-sidegrid">
-            <div class="vs-sidecard">
-              <div class="vs-sidecard-text"><h6>High-Protein</h6><p>01 foods</p></div>
-              <div class="vs-sidethumb">🥜</div>
-            </div>
-
-            <div class="vs-sidecard">
-              <div class="vs-sidecard-text"><h6>Dairy Alternatives</h6><p>01 watch</p></div>
-              <div class="vs-sidethumb">🥛</div>
-            </div>
-
-            <div class="vs-sidecard">
-              <div class="vs-sidecard-text"><h6>Iron-Boosting</h6><p>01 foods</p></div>
-              <div class="vs-sidethumb">🥬</div>
-            </div>
-
-            <div class="vs-sidecard">
-              <div class="vs-sidecard-text"><h6>Healthy Fats</h6><p>01 foods</p></div>
-              <div class="vs-sidethumb">🥑</div>
-            </div>
-
-            <div class="vs-sidecard">
-              <div class="vs-sidecard-text"><h6>B12 &amp; D</h6><p>01 foods</p></div>
-              <div class="vs-sidethumb">💊</div>
-            </div>
-
-            <div class="vs-sidecard">
-              <div class="vs-sidecard-text"><h6>Baking Swaps</h6><p>01 foods</p></div>
-              <div class="vs-sidethumb">🍞</div>
-            </div>
-          </div>
-
-          <div class="vs-sidepanel-bottom">
-            <div class="vs-sidepanel-subtitle">Personalized Dashboards</div>
-
-            <div class="vs-sidegrid vs-sidegrid-2">
-              <div class="vs-sidecard">
-                <div class="vs-sidecard-text"><h6>Dairy</h6><p>Notes</p></div>
-                <div class="vs-sidethumb">🧀</div>
-              </div>
-
-              <div class="vs-sidecard">
-                <div class="vs-sidecard-text"><h6>Soy</h6><p>01 foods</p></div>
-                <div class="vs-sidethumb">🫘</div>
-              </div>
-
-              <div class="vs-sidecard">
-                <div class="vs-sidecard-text"><h6>Yogurt</h6><p>Sweet</p></div>
-                <div class="vs-sidethumb">🥣</div>
-              </div>
-
-              <div class="vs-sidecard">
-                <div class="vs-sidecard-text"><h6>Butter</h6><p>Contents</p></div>
-                <div class="vs-sidethumb">🧈</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ===== Sidebar Extra: Calories + Quick Notes ===== -->
-<div class="vs-sidepanel-extra">
-
-  <div class="vs-mini-card">
-    <div class="vs-mini-title">🔥 Quick Calories</div>
-    <div class="vs-mini-row">
-      <span class="vs-mini-label">Suggested range</span>
-      <span class="vs-mini-value">1,800–2,200 kcal</span>
-    </div>
-
-    <div class="vs-mini-row">
-      <span class="vs-mini-label">Protein goal</span>
-      <span class="vs-mini-value">70–100 g</span>
-    </div>
-
-    <div class="vs-mini-note">
-      Tip: choose fortified plant milk + add legumes for easy balance.
-    </div>
-  </div>
-
-  <div class="vs-mini-card">
-    <div class="vs-mini-title">⭐ Today’s Quick Picks</div>
-
-    <div class="vs-quick-chip">🥛 Milk → Oat milk</div>
-    <div class="vs-quick-chip">🥚 Eggs → Flax egg</div>
-    <div class="vs-quick-chip">🍯 Honey → Maple syrup</div>
-  </div>
-
-  <!-- ===== Daily Nutrition Planner (SIDEBAR CARD) ===== -->
-<div class="vs-planner-card">
-  <div class="vs-planner-head">
-    <div class="vs-planner-icon" aria-hidden="true">🗓️</div>
-    <div>
-      <div class="vs-planner-title">Daily Nutrition Planner</div>
-      <div class="vs-planner-sub">Small steps every day lead to big changes.</div>
-    </div>
-  </div>
-
-  <div class="vs-planner-3">
-    <div class="vs-planner-mini">
-      <div class="vs-planner-mini-ico" aria-hidden="true">🎯</div>
-      <div class="vs-planner-mini-title">Plan Ahead</div>
-      <div class="vs-planner-mini-text">Prep meals and snacks to stay on track.</div>
-    </div>
-
-    <div class="vs-planner-mini">
-      <div class="vs-planner-mini-ico" aria-hidden="true">💧</div>
-      <div class="vs-planner-mini-title">Stay Hydrated</div>
-      <div class="vs-planner-mini-text">Drink plenty of water throughout the day.</div>
-    </div>
-
-    <div class="vs-planner-mini">
-      <div class="vs-planner-mini-ico" aria-hidden="true">❤️</div>
-      <div class="vs-planner-mini-title">Listen to Your Body</div>
-      <div class="vs-planner-mini-text">Eat mindfully and honor your hunger.</div>
-    </div>
-  </div>
-
-  <div class="vs-planner-block">
-    <div class="vs-planner-block-title">
-      <span aria-hidden="true">↔️</span> Smart Swap of the Day
-    </div>
-
-    <div class="vs-swap-row">
-      <div class="vs-swap-item">
-        <div class="vs-swap-food">🧀</div>
-        <div>
-          <div class="vs-swap-name">Cheese</div>
-          <div class="vs-swap-sub">High in saturated fat</div>
-        </div>
-      </div>
-
-      <div class="vs-swap-arrow" aria-hidden="true">➡️</div>
-
-      <div class="vs-swap-item">
-        <div class="vs-swap-food">🥜</div>
-        <div>
-          <div class="vs-swap-name">Cashew Cheese</div>
-          <div class="vs-swap-sub">Lower saturated fat, plant-based goodness</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="vs-planner-block">
-    <div class="vs-planner-block-title">
-      <span aria-hidden="true">🥗</span> Easy Meal Idea
-    </div>
-
-    <div class="vs-meal-row">
-      <div class="vs-meal-pic" aria-hidden="true">🥙</div>
-
-      <div class="vs-meal-info">
-        <div class="vs-meal-title">Power Buddha Bowl</div>
-        <div class="vs-meal-sub">A balanced bowl with protein, healthy fats, and fiber.</div>
-
-        <ul class="vs-meal-list">
-          <li>🍚 Quinoa</li>
-          <li>🫘 Chickpeas</li>
-          <li>🥑 Avocado</li>
-          <li>🥬 Leafy greens</li>
-        </ul>
-
-        <div class="vs-meal-kcal">~520 kcal per serving</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="vs-planner-footer">
-    <span aria-hidden="true">🌿</span>
-    Progress, not perfection. You’re doing great!
-    <span aria-hidden="true">✨</span>
-  </div>
-</div>
-<!-- ===== /Daily Nutrition Planner ===== -->
-
-</div>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
-<!-- ===== END: DASHBOARD ROW WRAPPER ===== -->
-
-
-  <!-- How It Works -->
-  <section class="py-5 vs-replacements">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="fw-bold">How It Works</h2>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="step-card text-center p-4 rounded-4 shadow-sm h-100">
-            <div class="step-number mb-3">1</div>
-            <h5 class="fw-semibold">Enter Your Details</h5>
-            <p class="text-muted mb-0">
-              Add age, height, weight, activity level, goals, and food
+            <h5>Recommendations</h5>
+            <p>
+              View food suggestions matched to your goal and dietary
               restrictions.
             </p>
           </div>
         </div>
 
-        <div class="col-md-4">
-          <div class="step-card text-center p-4 rounded-4 shadow-sm h-100">
-            <div class="step-number mb-3">2</div>
-            <h5 class="fw-semibold">Get Personalized Insights</h5>
-            <p class="text-muted mb-0">
-              View calorie estimates, important nutrients, and relevant food
-              suggestions.
+        <div class="col-md-6 col-xl-3">
+          <div class="vs-feature-summary-card h-100">
+            <div class="vs-feature-summary-icon">
+              <i class="bi bi-basket2"></i>
+            </div>
+            <h5>Vegan Foods</h5>
+            <p>
+              Browse vegan foods from the database with simple descriptions and
+              visuals.
             </p>
           </div>
         </div>
 
-        <div class="col-md-4">
-          <div class="step-card text-center p-4 rounded-4 shadow-sm h-100">
-            <div class="step-number mb-3">3</div>
-            <h5 class="fw-semibold">Build Better Habits</h5>
-            <p class="text-muted mb-0">
-              Use food guidance and vegan replacements to transition with
-              confidence.
+        <div class="col-md-6 col-xl-3">
+          <div class="vs-feature-summary-card h-100">
+            <div class="vs-feature-summary-icon">
+              <i class="bi bi-arrow-repeat"></i>
+            </div>
+            <h5>Replacements</h5>
+            <p>Learn plant-based alternatives for common non-vegan foods.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Feature -->
+  <section class="vs-spotlight-section">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6 reveal-on-load reveal-delay-1">
+          <div class="vs-spotlight-image-card">
+            <img
+              src="../assets/home-calculator-bg.jpg"
+              alt="Calculator feature"
+              class="vs-spotlight-image"
+            />
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal-on-load reveal-delay-2">
+          <div class="vs-spotlight-copy">
+            <span class="vs-spotlight-kicker">01 · Calculator</span>
+            <h2 class="vs-spotlight-title">
+              Estimate daily calorie needs with confidence
+            </h2>
+            <p class="vs-spotlight-text">
+              The calculator helps users enter their profile details and get
+              calorie guidance tailored to their activity level and goal.
+            </p>
+
+            <ul class="vs-spotlight-list">
+              <li>Personalized calorie estimation</li>
+              <li>Supports weight loss, maintenance, and gain goals</li>
+              <li>Highlights nutrient priorities for vegan transition</li>
+            </ul>
+
+            <a href="./calculator.html" class="btn vs-btn-primary">
+              Go to Calculator
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommendations Feature -->
+  <section class="vs-spotlight-section vs-spotlight-alt">
+    <div class="container">
+      <div class="row align-items-center g-4 flex-lg-row-reverse">
+        <div class="col-lg-6 reveal-on-load reveal-delay-1">
+          <div class="vs-spotlight-image-card">
+            <img
+              src="../assets/home-recommendations-bg.jpg"
+              alt="Recommendations feature"
+              class="vs-spotlight-image"
+            />
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal-on-load reveal-delay-2">
+          <div class="vs-spotlight-copy">
+            <span class="vs-spotlight-kicker">02 · Recommendations</span>
+            <h2 class="vs-spotlight-title">
+              Get foods matched to your nutrition goal
+            </h2>
+            <p class="vs-spotlight-text">
+              The recommendations page uses user inputs to suggest foods that
+              align with calorie needs, goals, and food restrictions.
+            </p>
+
+            <ul class="vs-spotlight-list">
+              <li>Goal-based vegan food suggestions</li>
+              <li>Allergy-aware filtering</li>
+              <li>Hover-based nutrition details for quick comparison</li>
+            </ul>
+
+            <a href="./recommendations.html" class="btn vs-btn-primary">
+              View Recommendations
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Foods Feature -->
+  <section class="vs-spotlight-section">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6 reveal-on-load reveal-delay-1">
+          <div class="vs-spotlight-image-card">
+            <img
+              src="../assets/home-foods-bg.jpg"
+              alt="Vegan foods feature"
+              class="vs-spotlight-image"
+            />
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal-on-load reveal-delay-2">
+          <div class="vs-spotlight-copy">
+            <span class="vs-spotlight-kicker">03 · Vegan Foods</span>
+            <h2 class="vs-spotlight-title">
+              Discover plant-based foods from the database
+            </h2>
+            <p class="vs-spotlight-text">
+              The vegan foods page presents foods in a clean and visual way,
+              helping users understand available plant-based options.
+            </p>
+
+            <ul class="vs-spotlight-list">
+              <li>Database-driven food display</li>
+              <li>Search and category filtering</li>
+              <li>Visual food cards with concise descriptions</li>
+            </ul>
+
+            <a href="./veganFoods.html" class="btn vs-btn-primary">
+              Explore Vegan Foods
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Replacements Feature -->
+  <section class="vs-spotlight-section vs-spotlight-alt">
+    <div class="container">
+      <div class="row align-items-center g-4 flex-lg-row-reverse">
+        <div class="col-lg-6 reveal-on-load reveal-delay-1">
+          <div class="vs-spotlight-image-card">
+            <img
+              src="../assets/home-replacements-bg.jpg"
+              alt="Replacements feature"
+              class="vs-spotlight-image"
+            />
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal-on-load reveal-delay-2">
+          <div class="vs-spotlight-copy">
+            <span class="vs-spotlight-kicker">04 · Replacements</span>
+            <h2 class="vs-spotlight-title">
+              Find simple alternatives for everyday foods
+            </h2>
+            <p class="vs-spotlight-text">
+              The replacements page helps users identify vegan substitutes for
+              common non-vegan items and move forward with practical choices.
+            </p>
+
+            <ul class="vs-spotlight-list">
+              <li>Simple beginner-friendly swaps</li>
+              <li>Supports smoother vegan transition</li>
+              <li>Clear, educational guidance</li>
+            </ul>
+
+            <a href="./replacements.html" class="btn vs-btn-primary">
+              Explore Replacements
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="vs-section-block">
+    <div class="container">
+      <div class="vs-section-heading text-center reveal-on-load reveal-delay-1">
+        <span class="vs-section-kicker">How It Works</span>
+        <h2 class="vs-section-title">A simple flow for a better transition</h2>
+        <p class="vs-section-text">
+          Vida Sana is designed to guide users step by step, from planning to
+          action.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4 reveal-on-load reveal-delay-2">
+          <div class="vs-step-card h-100">
+            <div class="vs-step-number">1</div>
+            <h5>Understand Your Profile</h5>
+            <p>
+              Start with your personal details and wellness goals to get
+              relevant guidance.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4 reveal-on-load reveal-delay-3">
+          <div class="vs-step-card h-100">
+            <div class="vs-step-number">2</div>
+            <h5>Explore Personalized Guidance</h5>
+            <p>
+              View nutrients to watch, matched food recommendations, and useful
+              categories.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4 reveal-on-load reveal-delay-4">
+          <div class="vs-step-card h-100">
+            <div class="vs-step-number">3</div>
+            <h5>Build Better Plant-Based Habits</h5>
+            <p>
+              Use foods and replacements to make sustainable and informed
+              choices.
             </p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- CTA Section -->
-  <section class="py-5 cta-section text-white">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-3">Start your healthy vegan journey today</h2>
-      <p class="mb-4">
-        Get the nutrition guidance you need to transition confidently and
-        sustainably.
-      </p>
-      <a href="#" class="btn btn-light btn-lg px-4">Get Started</a>
+
+  <!-- CTA -->
+  <section class="vs-home-cta">
+    <div class="container">
+      <div class="vs-home-cta-card text-center reveal-on-load reveal-delay-2">
+        <span class="vs-section-kicker">Start Today</span>
+        <h2 class="mb-3">
+          Take your first step toward a balanced vegan lifestyle
+        </h2>
+        <p class="mb-4">
+          Use the calculator, explore foods, and discover better plant-based
+          choices with Vida Sana.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+          <a href="./calculator.html" class="btn vs-btn-primary">Get Started</a>
+          <a href="./veganFoods.html" class="btn vs-btn-secondary"
+            >Browse Foods</a
+          >
+        </div>
+      </div>
     </div>
   </section>
 

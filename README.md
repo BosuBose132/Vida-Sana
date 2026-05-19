@@ -5,6 +5,10 @@ Vida Sana is a web application designed to help individuals transition to a vega
 The name “Vida Sana” means **Healthy Life**, reflecting the mission of helping users maintain a balanced and healthy plant-based lifestyle in a simple and accessible way.
 
 ---
+## Try Now
+https://vida-sana-8o14.vercel.app/
+
+---
 
 ## Project Overview
 
